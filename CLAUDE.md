@@ -36,8 +36,8 @@ Sistema de la familia Inge[X] con **acento por producto**:
   icono), **fidelidad del archivo** = degradado lime (la tesis del producto),
   **puente** = azul suave.
 - Resto idéntico a los hermanos: header slate-700, impact slate-900,
-  screenshots grandes alternando lado, español neutro (voseo, como el resto
-  de la familia), "Ing. Marco Sumari".
+  screenshots grandes alternando lado, **español neutro** (tuteo: «escribe», «abres», «tienes» — Marco pidió
+  explícitamente evitar el voseo el 2026-08-07), "Ing. Marco Sumari".
 
 ## Screenshots (`images/screenshots/`)
 
@@ -56,7 +56,7 @@ progresivo q88. El script de captura vive en el scratchpad de la sesión; si hac
 falta de nuevo, lo esencial es esas dos líneas.
 
 - `principal.jpeg` — hero: plano catastral **6-cofopri-ojamoq.dwg** (planta,
-  recuadros, cuadros de datos, administrador de capas). Reusada en «Lo que usás
+  recuadros, cuadros de datos, administrador de capas). Reusada en «Lo que usas
   todos los días».
 - `dwg-colega.jpeg` — **2-cerco-perimetrico.dwg**: elevaciones, secciones y
   sombreados de un cerco real.
@@ -76,6 +76,14 @@ headless; acá con PIL directamente porque el diseño es más simple.
 - Sin frameworks, sin trackers, sin cookies banner.
 - Descarga: **AppImage** (Linux x86_64) + código fuente. Windows se anuncia
   como «en camino» y **no** se promete: solo Linux está probado.
+- **Español neutro, sin voseo.** El copy usa tuteo: «escribe L y dibuja»,
+  «abres», «tienes», «puedes». Es una corrección explícita de Marco.
+- **El titular es «con el espíritu del CAD clásico»**, no «que abre el DWG del
+  colega»: la propuesta de valor se cuenta desde el parecido con los CAD que el
+  usuario ya conoce, no desde la anécdota del archivo que le mandan. En la misma
+  línea, la sección de DWG dice «abre tus archivos sin conversores» (LibreDWG
+  dentro) y la de fidelidad «tu plano lo abre cualquier CAD» (r2000 → AutoCAD,
+  BricsCAD, ZWCAD), no «le devuelves el plano sano».
 - **La topografía (puntos con cota, cuadro de coordenadas, perfiles) NO se
   promete**: es v0.2 y hay un FAQ que lo dice explícitamente. La regla es que
   el sitio solo afirme lo que la app hace hoy — el `README.md` del producto,
