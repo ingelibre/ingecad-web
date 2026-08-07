@@ -1,0 +1,10 @@
+.git
+.gitignore
+.assetsignore
+.cover-build
+.wrangler
+CLAUDE.md
+COMO-PUBLICAR.md
+README.md
+wrangler.jsonc
+node_modules

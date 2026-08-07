@@ -1,0 +1,16 @@
+{
+  // Despliegue en Cloudflare Workers (sitio estático), espejo de
+  // los hermanos: `npx wrangler deploy` publica los assets de la
+  // raíz del repo. Los custom domains (ingecad.org) se declaran en
+  // routes — requieren que la zona exista en la cuenta de Cloudflare.
+  "name": "ingecad-web",
+  "compatibility_date": "2026-08-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./"
+  },
+  "routes": [
+    { "pattern": "ingecad.org", "custom_domain": true },
+    { "pattern": "www.ingecad.org", "custom_domain": true }
+  ]
+}

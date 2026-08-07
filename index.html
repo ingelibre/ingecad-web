@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#273445">
+
+  <title>IngeCAD · CAD 2D libre para Linux, con DWG de fábrica</title>
+
+  <meta name="description" content="CAD 2D libre estilo AutoCAD clásico: abre el DWG que te manda el colega, dibuja con la línea de comandos y los aliases que ya conocés, imprime a escala exacta. Nativo en Linux, sin ribbon. Código abierto GPL-3.0.">
+  <meta name="keywords" content="CAD 2D libre, alternativa a AutoCAD, AutoCAD Linux, abrir DWG en Linux, CAD software libre, DWG DXF Linux, LibreDWG, AutoCAD LT libre, CAD ingeniería civil, dibujo técnico Linux, código abierto, GPL">
+  <meta name="author" content="Ing. Marco Sumari">
+
+  <link rel="canonical" href="https://ingecad.org/">
+
+  <meta property="og:site_name" content="IngeCAD">
+  <meta property="og:title" content="IngeCAD · CAD 2D libre para Linux, con DWG de fábrica">
+  <meta property="og:description" content="Abre el DWG del colega, dibuja con los aliases de AutoCAD, imprime a escala exacta. Libre y de código abierto (GPL-3.0). Nativo en Linux.">
+  <meta property="og:image" content="https://ingecad.org/images/og-banner.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://ingecad.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IngeCAD · CAD 2D libre para Linux, con DWG de fábrica">
+  <meta name="twitter:description" content="Abre el DWG del colega, dibuja con los aliases de AutoCAD, imprime a escala exacta. Libre y de código abierto.">
+  <meta name="twitter:image" content="https://ingecad.org/images/og-banner.jpg">
+
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="images/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "IngeCAD",
+    "operatingSystem": "Linux",
+    "applicationCategory": "DesignApplication",
+    "description": "CAD 2D libre en la línea del AutoCAD clásico, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de acad.pgp, referencias a objetos con marcadores AutoSnap, capas, bloques, sombreados, cotas, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0.",
+    "url": "https://ingecad.org/",
+    "image": "https://ingecad.org/images/logo.png",
+    "author": {
+      "@type": "Person",
+      "name": "Ing. Marco Sumari",
+      "email": "ing.sumari@gmail.com"
+    },
+    "inLanguage": "es",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "softwareVersion": "0.1.2",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Software libre y gratuito bajo licencia GPL-3.0. Sin cuentas, sin suscripciones, sin límites."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es gratis de verdad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. IngeCAD es software libre bajo licencia GPL-3.0: gratis hoy y para siempre, con el código fuente publicado en GitHub. Sin cuentas, sin suscripciones, sin funciones bloqueadas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Abre el DWG que me manda un colega?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, con doble clic y sin pasos intermedios: IngeCAD trae GNU LibreDWG incluido y convierte el DWG por dentro, sin que vos veas el DXF. Lee hasta AutoCAD 2018 y guarda DWG r2000, que abre cualquier AutoCAD o BricsCAD desde el año 2000. Si además instalás el ODA File Converter (gratuito), también exporta r2018."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué se diferencia de AutoCAD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IngeCAD es libre, corre nativo en Linux y es deliberadamente chico: hace lo que usás todos los días (líneas, polilíneas, círculos, bloques, capas, sombreados, cotas, recortar, equidistancia, imprimir a escala) y no pretende clonar AutoCAD función por función. La interfaz es la clásica anterior al ribbon, con la línea de comandos abajo y los mismos aliases: escribís L y dibujás una línea."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tengo que aprender comandos nuevos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. IngeCAD usa los aliases de acad.pgp que ya tenés en los dedos: L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Podés escribir coordenadas absolutas (10,5), relativas (@10,5) o polares (@10<45)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Mis planos quedan intactos al guardar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Esa es la promesa central. El modelo de IngeCAD ES la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de Civil 3D, XDATA, diccionarios, sólidos 3D) se conserva intacto al reescribir el archivo. Le devolvés el plano sano al colega."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona sin internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todo. IngeCAD no consulta ningún servidor: no tiene cuentas, ni nube, ni telemetría. Tus planos viven en tu PC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo lo instalo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Descargá el AppImage de la sección Descargar, dale permiso de ejecución y andá: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. También podés correrlo desde el código fuente con tres comandos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay versión para Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Todavía no. IngeCAD nació en Linux y esa es la plataforma que hoy está probada; el empaquetado de Windows está en la hoja de ruta y ninguna decisión de diseño lo bloquea. Desde el código fuente ya corre en Windows, pero no lo damos por soportado hasta que exista el instalador."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo reporto un problema o contribuyo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El proyecto vive en GitHub: abrí un issue con tu plano de ejemplo, propone mejoras o mandá código. Si un DWG no abre bien, ese archivo es lo más valioso que podés aportar — varios arreglos de esta versión salieron justamente de planos reales que fallaban."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="images/logo.png" alt="IngeCAD" width="32" height="32">
+        <span>IngeCAD</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Características</a>
+        <a href="#descargar">Descargar</a>
+        <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-center">
+      <h1>El CAD 2D libre<br>que abre el DWG del colega</h1>
+      <p class="hero-sub">La interfaz clásica de AutoCAD, los aliases que ya tenés en los dedos.<br>Nativo en Linux. Código abierto.</p>
+      <div class="hero-ctas">
+        <a href="#descargar" class="btn btn-primary btn-lg">Descargar IngeCAD gratis</a>
+        <span class="hero-version">Última versión: <span id="latest-version">v0.1.2</span></span>
+      </div>
+    </div>
+    <div class="hero-screenshot-wrap">
+      <img class="hero-img" src="images/screenshots/principal.jpeg"
+           alt="IngeCAD con un plano catastral de COFOPRI abierto: planta, recuadros de detalle, cuadros de datos y el administrador de capas"
+           width="1600" height="1005" loading="eager" fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <div id="features">
+
+    <!-- ── 1. DWG de fábrica — rojo suave (eje X del icono) ── -->
+    <section class="feat feat-terra reveal">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <h2>El DWG entra con doble clic</h2>
+          <p>El plano llega por WhatsApp y lo abrís. Sin convertir a mano, sin pasos intermedios, sin ver nunca el DXF del medio.</p>
+          <ul class="feat-list">
+            <li><strong>Lee DWG hasta AutoCAD 2018</strong> — con <a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a> incluido, nada que instalar aparte</li>
+            <li><strong>Guarda DWG r2000</strong> — lo abre cualquier AutoCAD o BricsCAD desde el año 2000</li>
+            <li><strong>DWG r2018</strong> si instalás el ODA File Converter, gratuito y con un clic</li>
+            <li><strong>DXF nativo</strong> de ida y vuelta, en cualquier versión</li>
+          </ul>
+          <p class="feat-muted">En la captura: un plano de cerco perimétrico real, con sus elevaciones, secciones y sombreados.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/dwg-colega.jpeg"
+               alt="Plano de cerco perimétrico abierto en IngeCAD, con elevaciones y secciones" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 2. La tesis: fidelidad del archivo — gradiente lime ── -->
+    <section class="feat feat-bim reveal">
+      <div class="container feat-row feat-reverse">
+        <div class="feat-text">
+          <h2>Le devolvés el plano sano</h2>
+          <p>El modelo de IngeCAD <strong>es</strong> la base de datos del DXF. Lo que el programa no entiende no lo toca: sigue ahí, intacto, cuando guardás.</p>
+          <ul class="feat-list">
+            <li><strong>Objetos de Civil 3D, XDATA, diccionarios, sólidos 3D</strong> — se conservan tal cual</li>
+            <li><strong>Bloques anidados, MTEXT con formato, sombreados, cotas</strong> se dibujan como los guardó el archivo</li>
+            <li><strong>Sistemas de coordenadas UTM</strong> en float64 — un Este de 500 000 no pierde precisión</li>
+            <li><strong>Verificación al guardar</strong> — relee el DWG que acaba de escribir y avisa si algo se perdió</li>
+          </ul>
+          <p class="feat-muted-light">Trabajar sobre el plano de otro no debería degradarlo. Esa es la promesa que ordena todo lo demás.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/planos-grandes.jpeg"
+               alt="Plano topográfico de 10 847 entidades abierto en IngeCAD, con sus láminas de curvas de nivel y perfiles" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 3. La línea de comandos ── -->
+    <section class="feat reveal">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <h2>Escribí <code>L</code> y dibujá una línea</h2>
+          <p>La memoria muscular de años no se tira. La línea de comandos está abajo, donde siempre, y responde a los mismos aliases de <code>acad.pgp</code>.</p>
+          <ul class="feat-list">
+            <li><strong>L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z</strong></li>
+            <li><strong>Espacio y Enter ejecutan</strong>; Enter en vacío repite el último comando; Esc cancela</li>
+            <li><strong>Coordenadas por teclado</strong> — absolutas <code>10,5</code>, relativas <code>@10,5</code>, polares <code>@10&lt;45</code></li>
+            <li><strong>Selección ventana y cruce</strong> con los colores de AutoCAD, REFENT con sus marcadores</li>
+          </ul>
+          <p class="feat-muted">Interfaz clásica anterior al ribbon: barra de menús, barras de herramientas acoplables, ventana de comandos y barra de estado. El ribbon no existe ni va a existir.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/comandos.jpeg"
+               alt="La ventana de comandos de IngeCAD con el historial de comandos escritos y el aviso CIRCULO Especifique el centro" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 4. Dibujo, edición y salida ── -->
+    <section class="feat feat-alt reveal">
+      <div class="container feat-row feat-reverse">
+        <div class="feat-text">
+          <h2>Lo que usás todos los días</h2>
+          <p>Deliberadamente chico. No es un clon de AutoCAD función por función: es tu flujo real, completo.</p>
+          <ul class="feat-list">
+            <li><strong>Dibujo</strong> — líneas, círculos, arcos, polilíneas, rectángulos, polígonos, texto, sombreados, cotas</li>
+            <li><strong>Edición</strong> — BORRAR, DESPLAZA, COPIA, GIRA, ESCALA, SIMETRÍA, EQUIDISTANCIA, RECORTA, ALARGA, EMPALME, DESCOMPONER, pinzamientos</li>
+            <li><strong>Organización</strong> — administrador de capas, propiedades, estilos de texto y cota, bloques</li>
+            <li><strong>Salida</strong> — imprimí o exportá PDF y PNG <strong>a escala exacta</strong>, verificable con regla</li>
+          </ul>
+          <p class="feat-muted">Deshacer y rehacer de todo, portapapeles, pestañas Modelo y presentaciones.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/principal.jpeg"
+               alt="IngeCAD con el administrador de capas, las barras de dibujo y modificación y las pestañas de presentación" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PUENTE FAMILIA INGE ============ -->
+  <section class="bridge reveal">
+    <div class="container">
+      <div class="bridge-icons">
+        <img class="bridge-icon" src="images/ingetrazo-logo.png" alt="IngeTrazo" width="56" height="56">
+        <img class="bridge-icon" src="images/ingepresupuestos-logo.png" alt="IngePresupuestos" width="56" height="56">
+      </div>
+      <h2>Del plano al modelo,<br>y del modelo al presupuesto</h2>
+      <p>IngeCAD es el hermano 2D de <strong>IngeTrazo</strong> (modelador 3D con BIM) y de <strong>IngePresupuestos</strong> (presupuestos de obra). El mismo DXF viaja entre los tres, y el mismo CSV del topógrafo entra a los dos primeros.</p>
+      <div class="flow">Plano 2D → Modelo 3D → Metrado → Presupuesto</div>
+      <div class="btn-row">
+        <a href="https://ingetrazo.com" target="_blank" rel="noopener" class="btn btn-blue">Conocer IngeTrazo</a>
+        <a href="https://ingepresupuestos.com" target="_blank" rel="noopener" class="btn btn-orange">Conocer IngePresupuestos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="impact">
+    <h2>Libre y de código abierto.<br>Para siempre.</h2>
+    <p>IngeCAD es software libre bajo GPL-3.0. Sin cuentas, sin nube, sin suscripciones, sin telemetría: tus planos viven en tu PC, en el formato abierto que ya usás. Hecho en el Perú para el ingeniero de toda Latinoamérica.</p>
+  </section>
+
+  <!-- ============ DESCARGAR ============ -->
+  <section id="descargar" class="download-section">
+    <div class="container">
+      <h2>Descargá IngeCAD</h2>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.1.2</span> — <span id="dl-date">agosto 2026</span>.</p>
+      <div class="dl-row">
+        <div class="dl-group">
+          <span class="dl-group-label">Linux · x86_64</span>
+          <div class="dl-group-cards">
+            <a class="dl-card dl-card-compact" id="dl-appimage" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              <strong>AppImage</strong>
+              <span>no instala nada · 112 MB</span>
+            </a>
+          </div>
+          <div class="dl-code">
+            <code>chmod +x IngeCAD-0.1.2-x86_64.AppImage
+./IngeCAD-0.1.2-x86_64.AppImage</code>
+            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.1.2-x86_64.AppImage && ./IngeCAD-0.1.2-x86_64.AppImage">Copiar</button>
+          </div>
+          <p class="dl-group-alt">Python, Qt y los conversores de DWG viajan dentro. Corre en Ubuntu 22.04 y posteriores.</p>
+        </div>
+
+        <div class="dl-divider"></div>
+
+        <div class="dl-group">
+          <span class="dl-group-label">Desde el código fuente</span>
+          <div class="dl-group-cards">
+            <a class="dl-card dl-card-compact" href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 0h5l4 4v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zm5 1v3h3L9 1z"/></svg>
+              <strong>Ver en GitHub</strong>
+              <span>código + releases</span>
+            </a>
+          </div>
+          <div class="dl-code">
+            <code>git clone https://github.com/ingelibre/ingecad && cd ingecad
+python3 -m venv venv && venv/bin/pip install -r requirements.txt
+venv/bin/python main.py</code>
+            <button class="dl-code-copy" type="button" data-copy="git clone https://github.com/ingelibre/ingecad && cd ingecad && python3 -m venv venv && venv/bin/pip install -r requirements.txt && venv/bin/python main.py">Copiar</button>
+          </div>
+          <p class="dl-note">Windows: en camino. Todos los archivos en los <a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">releases de GitHub</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section">
+    <div class="container container-narrow">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+        <p>Lo que todos preguntan antes de abrir el primer plano.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Es gratis de verdad?</summary>
+          <p>Sí. IngeCAD es <strong>software libre bajo GPL-3.0</strong>: gratis hoy y para siempre, con el código fuente publicado en GitHub. Sin cuentas, sin suscripciones, sin funciones bloqueadas.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Abre el DWG que me manda un colega?</summary>
+          <p>Sí, con doble clic y sin pasos intermedios: IngeCAD trae <strong>GNU LibreDWG</strong> incluido y convierte el DWG por dentro, sin que vos veas el DXF. Lee hasta <strong>AutoCAD 2018</strong> y guarda <strong>DWG r2000</strong>, que abre cualquier AutoCAD o BricsCAD desde el año 2000. Si además instalás el ODA File Converter (gratuito), también exporta r2018.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿En qué se diferencia de AutoCAD?</summary>
+          <p>IngeCAD es libre, corre <strong>nativo en Linux</strong> y es <strong>deliberadamente chico</strong>: hace lo que usás todos los días y no pretende clonar AutoCAD función por función. La interfaz es la clásica anterior al ribbon, con la línea de comandos abajo y los mismos aliases: escribís <code>L</code> y dibujás una línea.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Tengo que aprender comandos nuevos?</summary>
+          <p>No. IngeCAD usa los aliases de <code>acad.pgp</code> que ya tenés en los dedos: <code>L</code>, <code>C</code>, <code>A</code>, <code>PL</code>, <code>REC</code>, <code>POL</code>, <code>E</code>, <code>M</code>, <code>CO</code>, <code>RO</code>, <code>O</code>, <code>TR</code>, <code>EX</code>, <code>MI</code>, <code>SC</code>, <code>B</code>, <code>I</code>, <code>H</code>, <code>LA</code>, <code>Z</code>. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Podés escribir coordenadas absolutas <code>10,5</code>, relativas <code>@10,5</code> o polares <code>@10&lt;45</code>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Mis planos quedan intactos al guardar?</summary>
+          <p>Esa es la promesa central. El modelo de IngeCAD <strong>es</strong> la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de Civil 3D, XDATA, diccionarios, sólidos 3D) <strong>se conserva intacto</strong> al reescribir el archivo. Le devolvés el plano sano al colega.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Funciona sin internet?</summary>
+          <p>Sí, todo. IngeCAD no consulta ningún servidor: <strong>no tiene cuentas, ni nube, ni telemetría</strong>. Tus planos viven en tu PC.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo lo instalo?</summary>
+          <p>Descargá el <strong>AppImage</strong> de la sección Descargar, dale permiso de ejecución y andá: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, corré <code>./IngeCAD-*.AppImage --check</code> y te dice qué le falta. También podés correrlo desde el código fuente con tres comandos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Hay versión para Windows?</summary>
+          <p><strong>Todavía no.</strong> IngeCAD nació en Linux y esa es la plataforma que hoy está probada; el empaquetado de Windows está en la hoja de ruta y ninguna decisión de diseño lo bloquea. Desde el código fuente ya corre en Windows, pero no lo damos por soportado hasta que exista el instalador.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Y la topografía: puntos, cuadro de coordenadas, perfiles?</summary>
+          <p>Viene en la <strong>v0.2</strong>: importar el CSV del topógrafo con cotas, el cuadro de datos técnicos automático (Este/Norte, lados, rumbos, área y perímetro) y el perfil de elevaciones de un eje. Hoy IngeCAD ya dibuja y edita el plano completo, pero esas tres cosas todavía no están — y preferimos decirlo antes de que las busques.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo reporto un problema o contribuyo?</summary>
+          <p>El proyecto vive en <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>: abrí un issue con tu plano de ejemplo, proponé mejoras o mandá código. <strong>Si un DWG no abre bien, ese archivo es lo más valioso que podés aportar</strong> — varios arreglos de esta versión salieron justamente de planos reales que fallaban, y trece de ellos ya son parches enviados a GNU LibreDWG.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo de IngeCAD" width="36" height="36">
+          <strong>IngeCAD</strong>
+        </div>
+        <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
+        <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#descargar">Descargar</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">Releases</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">Código abierto (GitHub)</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/issues" target="_blank" rel="noopener">Reportar un problema</a></li>
+          <li><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">Licencia GPL-3.0</a></li>
+          <li><a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Familia Inge</h4>
+        <ul>
+          <li><a href="https://ingetrazo.com" target="_blank" rel="noopener">IngeTrazo · modelador 3D</a></li>
+          <li><a href="https://ingepresupuestos.com" target="_blank" rel="noopener">IngePresupuestos</a></li>
+          <li><a href="mailto:ing.sumari@gmail.com">ing.sumari@gmail.com</a></li>
+          <li><a href="https://wa.me/51998839090" target="_blank" rel="noopener">WhatsApp +51 998 839 090</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox para ampliar capturas -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
