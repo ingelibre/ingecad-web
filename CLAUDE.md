@@ -55,21 +55,45 @@ por el device pixel ratio. Después se reescala a 1600 de ancho y se guarda JPEG
 progresivo q88. El script de captura vive en el scratchpad de la sesión; si hace
 falta de nuevo, lo esencial es esas dos líneas.
 
-- `principal.jpeg` — hero: plano catastral **6-cofopri-ojamoq.dwg** (planta,
-  recuadros, cuadros de datos, administrador de capas). Reusada en «Lo que usas
-  todos los días».
-- `dwg-colega.jpeg` — **2-cerco-perimetrico.dwg**: elevaciones, secciones y
-  sombreados de un cerco real.
-- `planos-grandes.jpeg` — **5-sedapar.dwg**, el plano topográfico de 10 847
-  entidades (el que motivó el parche Reed-Solomon de LibreDWG).
-- `comandos.jpeg` — la ventana de comandos con historial real:
-  `Comando: LA` / `Comando: C` / `CIRCULO Especifique el centro o [2P/3P]:`.
-  Escrito con `QTest.keyClicks(win.command_line.input, ...)` — hay que apuntar
-  al `input` interno, no al contenedor.
+**Las cuatro vigentes las capturó Marco el 2026-08-07**, todas del
+`corpus-dwg` y todas medidas antes de escribir el pie (los conteos del copy son
+reales, no estimados):
 
-OG banner: compuesto con PIL (`web/images/og-banner.jpg`) desde el icono real y
-un recorte del hero. Los hermanos lo hacen con `.cover-build/og.html` + Chromium
-headless; acá con PIL directamente porque el diseño es más simple.
+- `principal.jpeg` — hero: **0999_3.COBERTURAS.dwg** (4 228 entidades, 32 capas,
+  r2013), el detalle del tijeral T-4 con nudos numerados y cotas. Reusada en «Lo
+  que usas todos los días» **y dentro del banner OG**.
+- `dwg-colega.jpeg` — **casa.dwg** (200 entidades, 11 capas, **r2018**): planta
+  de vivienda con mobiliario, cotas y nombres de ambiente. Va en la sección de
+  DWG a propósito: es r2018, o sea la prueba del bullet «Lee DWG hasta AutoCAD
+  2018». Si se cambia, cambiar también ese pie.
+- `planos-grandes.jpeg` — **0904_PLANTA Y PERFIL TRAZO LCCE SEDAPAR.dwg**
+  (10 847 entidades, 45 capas, r2007): el plano que motivó el parche
+  Reed-Solomon de LibreDWG. El `alt` cita las 10 847 — verificado.
+- `comandos.jpeg` — **0333_Planos estructuras iglesia de yanaquihua.dwg**
+  (6 231 entidades, **200 capas**, r2013).
+
+⚠️ **Dos pendientes conocidos de estas cuatro**, ambos decisión de Marco:
+la interfaz sale **en inglés** (menús, `type a command`, `Layers/Properties`,
+`GRID/ORTHO/POLAR`) en un sitio en español; y la de la sección de la línea de
+comandos muestra el prompt **en reposo**, sin ningún comando tipeado — la
+anterior sí llevaba historial real (`Comando: LA`, `CIRCULO Especifique el
+centro`), escrito con `QTest.keyClicks(win.command_line.input, ...)`, apuntando
+al `input` interno y no al contenedor.
+
+OG banner: `tools/gen-images.py` lo repinta, no lo rehace — ver abajo.
+
+## Iconos — `tools/gen-images.py`
+
+**La fuente de verdad es `resources/ingecad.svg` del repo del producto**, no una
+copia acá. `python3 tools/gen-images.py` rasteriza `logo.png` (256),
+`logo-512.png`, `favicon-16/32.png` y `apple-touch-icon.png` (180) con Inkscape,
+y **repinta solo el parche del icono en el banner OG**: rellena el rectángulo del
+mosaico con el propio degradado del banner (una rampa vertical, se muestrea de
+las dos esquinas) y pega el icono nuevo en el mismo sitio y tamaño. La
+tipografía del banner se compuso a mano y no vale la pena re-derivar sus
+métricas: así el resto del diseño aprobado no se toca. Coordenadas medidas del
+archivo aprobado: el mosaico ocupa x 76..171, y 98..189, o sea un render de
+106 px en (69, 91).
 
 ## Decisiones (no revertir sin discutir)
 
