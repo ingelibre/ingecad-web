@@ -32,6 +32,11 @@ Sistema de la familia Inge[X] con **acento por producto**:
   sobre él pase contraste; el `#68B723` puro queda para los degradados.
 - IngeTrazo = Blueberry `#3689E6` (`--blue`); IngePresupuestos = naranja
   `#F37329` (`--orange`). Los dos aparecen SOLO en la sección puente.
+- ⚠️ **Los dos logos de la sección puente son COPIAS** y se desincronizan en
+  silencio cuando el hermano cambia su icono. `ingetrazo-logo.png` se regenera
+  con `inkscape -w 256 -h 256 ~/Proyectos/ingetrazo/app/resources/icons/ingetrazo.svg`
+  (tiene SVG desde el 2026-08-07). `ingepresupuestos-logo.png` **no tiene fuente
+  vectorial**, así que ese hay que copiarlo del raster del hermano.
 - Secciones coloreadas: **DWG** = rojo suave `--straw-soft` (el eje X del
   icono), **fidelidad del archivo** = degradado lime (la tesis del producto),
   **puente** = azul suave.
