@@ -77,6 +77,14 @@ reales, no estimados):
 - `comandos.jpeg` — **0333_Planos estructuras iglesia de yanaquihua.dwg**
   (6 231 entidades, **200 capas**, r2013).
 
+- `presentacion.jpeg` — **casa.dwg** en una **presentación** (agregada el 2026-08-10
+  para la v0.2): hoja A3 apaisada con márgenes de 10 mm, una ventana gráfica creada
+  con `viewport_fit_printable` y la escala puesta por el camino real de comandos
+  (`MS` → `Z` → `20XP` → `PS`), así que el historial que se ve es el que imprime la
+  app. **El pie dice 20XP y no 1:50 a propósito**: `casa.dwg` está en metros y la
+  hoja en milímetros, así que el factor sin unidades de un 1:50 real es 20 — igual
+  que en AutoCAD. Si se recaptura con un dibujo en mm, hay que cambiar ese pie.
+
 ⚠️ **Dos pendientes conocidos de estas cuatro**, ambos decisión de Marco:
 la interfaz sale **en inglés** (menús, `type a command`, `Layers/Properties`,
 `GRID/ORTHO/POLAR`) en un sitio en español; y la de la sección de la línea de
