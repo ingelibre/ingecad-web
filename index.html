@@ -55,7 +55,7 @@
     },
     "inLanguage": "es",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "softwareVersion": "0.2.0",
+    "softwareVersion": "0.3.0",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -123,7 +123,7 @@
         "name": "¿Cómo lo instalo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Descarga el AppImage de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. También puedes ejecutarlo desde el código fuente con tres comandos."
+          "text": "Descarga el AppImage de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si tu distro no trae FUSE, descarga el tar.gz en su lugar: lo descomprimes donde quieras y ejecutas ingecad — es el mismo programa, sin envoltorio. También puedes ejecutarlo desde el código fuente con tres comandos."
         }
       },
       {
@@ -147,7 +147,7 @@
         "name": "¿Y la topografía: puntos, cuadro de coordenadas, perfiles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Es lo que sigue, en la v0.3: importar el CSV del topógrafo con cotas, el cuadro de datos técnicos automático (Este/Norte, lados, rumbos, área y perímetro) y el perfil de elevaciones de un eje. Hoy IngeCAD ya dibuja, acota, arma la lámina e imprime el plano completo, pero esas tres cosas todavía no están — y preferimos decirlo antes de que las busques."
+          "text": "Es lo que sigue, en la v0.4: importar el CSV del topógrafo con cotas, el cuadro de datos técnicos automático (Este/Norte, lados, rumbos, área y perímetro) y el perfil de elevaciones de un eje. Hoy IngeCAD ya dibuja, acota, arma la lámina e imprime el plano completo, pero esas tres cosas todavía no están — y preferimos decirlo antes de que las busques."
         }
       },
       {
@@ -190,7 +190,7 @@
       <p class="hero-sub">Abre DWG y DXF sin conversores. Los mismos comandos y aliases que ya conoces.<br>Nativo en Linux. Código abierto.</p>
       <div class="hero-ctas">
         <a href="#descargar" class="btn btn-primary btn-lg">Descargar IngeCAD gratis</a>
-        <span class="hero-version">Última versión: <span id="latest-version">v0.2.0</span></span>
+        <span class="hero-version">Última versión: <span id="latest-version">v0.3.0</span></span>
       </div>
     </div>
     <div class="hero-screenshot-wrap">
@@ -339,7 +339,7 @@
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.2.0</span> — <span id="dl-date">agosto 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.3.0</span> — <span id="dl-date">agosto 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
@@ -349,13 +349,25 @@
               <strong>AppImage</strong>
               <span>no instala nada · 112 MB</span>
             </a>
+            <a class="dl-card dl-card-compact" id="dl-tarball" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3a1 1 0 0 1 1-1h4l1.5 1.5H13a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm6 3v4.29L6.85 9.15l-.7.7L8.5 12.2l2.35-2.35-.7-.7L9 10.29V6H8z"/></svg>
+              <strong>tar.gz</strong>
+              <span>sin FUSE · 123 MB</span>
+            </a>
           </div>
-          <div class="dl-code">
-            <code>chmod +x IngeCAD-0.2.0-x86_64.AppImage
-./IngeCAD-0.2.0-x86_64.AppImage</code>
-            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.2.0-x86_64.AppImage && ./IngeCAD-0.2.0-x86_64.AppImage">Copiar</button>
+          <p class="dl-group-alt"><strong>AppImage</strong>: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos):</p>
+          <div class="dl-code" id="dl-code-appimage">
+            <code>chmod +x IngeCAD-0.3.0-x86_64.AppImage
+./IngeCAD-0.3.0-x86_64.AppImage</code>
+            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.3.0-x86_64.AppImage && ./IngeCAD-0.3.0-x86_64.AppImage">Copiar</button>
           </div>
-          <p class="dl-group-alt">Python, Qt y los conversores de DWG viajan dentro. Corre en Ubuntu 22.04 y posteriores.</p>
+          <p class="dl-group-alt"><strong>tar.gz</strong>: si tu distro no trae FUSE (lo único que un AppImage necesita), descomprime y ejecuta — sirve igual para instalarlo en <code>/opt</code>:</p>
+          <div class="dl-code" id="dl-code-tarball">
+            <code>tar -xzf IngeCAD-0.3.0-linux-x86_64.tar.gz
+IngeCAD-0.3.0/ingecad</code>
+            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.3.0-linux-x86_64.tar.gz && IngeCAD-0.3.0/ingecad">Copiar</button>
+          </div>
+          <p class="dl-group-alt">Los dos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Corren en Ubuntu 22.04 y posteriores. Si algo falla, <code>--check</code> te dice qué falta.</p>
         </div>
 
         <div class="dl-divider"></div>
@@ -415,7 +427,7 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Cómo lo instalo?</summary>
-          <p>Descarga el <strong>AppImage</strong> de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, ejecuta <code>./IngeCAD-*.AppImage --check</code> y te dice qué le falta. También puedes ejecutarlo desde el código fuente con tres comandos.</p>
+          <p>Descarga el <strong>AppImage</strong> de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si tu distro no trae FUSE, descarga el <strong>tar.gz</strong> en su lugar: lo descomprimes donde quieras (<code>/opt</code>, tu carpeta personal) y ejecutas <code>ingecad</code> — es el mismo programa, sin envoltorio. Si algo no funciona, ejecuta <code>--check</code> y te dice qué le falta. También puedes ejecutarlo desde el código fuente con tres comandos.</p>
         </details>
         <details class="faq-item">
           <summary>¿Hay versión para Windows?</summary>
@@ -427,7 +439,7 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Y la topografía: puntos, cuadro de coordenadas, perfiles?</summary>
-          <p>Es lo que sigue, en la <strong>v0.3</strong>: importar el CSV del topógrafo con cotas, el cuadro de datos técnicos automático (Este/Norte, lados, rumbos, área y perímetro) y el perfil de elevaciones de un eje. Hoy IngeCAD ya dibuja, acota, arma la lámina e imprime el plano completo, pero esas tres cosas todavía no están — y preferimos decirlo antes de que las busques.</p>
+          <p>Es lo que sigue, en la <strong>v0.4</strong>: importar el CSV del topógrafo con cotas, el cuadro de datos técnicos automático (Este/Norte, lados, rumbos, área y perímetro) y el perfil de elevaciones de un eje. Hoy IngeCAD ya dibuja, acota, arma la lámina e imprime el plano completo, pero esas tres cosas todavía no están — y preferimos decirlo antes de que las busques.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cómo reporto un problema o contribuyo?</summary>

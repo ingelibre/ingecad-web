@@ -487,6 +487,13 @@ code {
 .dl-card-compact { padding: 16px 28px; min-width: 130px; }
 .dl-note { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 18px; }
 .dl-group-alt { font-size: 12px; color: rgba(255,255,255,0.7); }
+/* Inline code inside the green download section: the light-section chip
+   (silver on silver) is unreadable there. */
+.dl-group-alt code {
+  background: rgba(255,255,255,0.16);
+  color: var(--white);
+  padding: 1px 5px;
+}
 .dl-divider { height: 1px; width: 100%; max-width: 340px; background: rgba(255,255,255,0.18); margin: 22px auto 8px; }
 @media (max-width: 760px) { .dl-divider { display: none; } .dl-row { gap: 24px; } }
 .dl-note a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }

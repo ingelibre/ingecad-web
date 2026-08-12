@@ -19,27 +19,36 @@
         if (dd) dd.textContent = d.toLocaleDateString('es-PE',
           { year: 'numeric', month: 'long' });
       }
-      /* URL exacta del AppImage del release, y su tamaño real */
+      /* URL exacta de cada artefacto del release, su tamaño real, y el
+         comando copiable con el nombre exacto del archivo. */
+      function updateCard(cardId, label, a, codeId, lines, copyCmd) {
+        var btn = document.getElementById(cardId);
+        if (btn) {
+          btn.href = a.browser_download_url;
+          var size = btn.querySelector('span');
+          if (size && a.size) {
+            size.textContent = label + ' · ' +
+              Math.round(a.size / 1048576) + ' MB';
+          }
+        }
+        var box = document.getElementById(codeId);
+        if (box) {
+          var code = box.querySelector('code');
+          var copy = box.querySelector('.dl-code-copy');
+          if (code) code.textContent = lines;
+          if (copy) copy.setAttribute('data-copy', copyCmd);
+        }
+      }
       (rel.assets || []).forEach(function (a) {
         if (/\.AppImage$/.test(a.name)) {
-          var btn = document.getElementById('dl-appimage');
-          if (btn) {
-            btn.href = a.browser_download_url;
-            var size = btn.querySelector('span');
-            if (size && a.size) {
-              size.textContent = 'no instala nada · ' +
-                Math.round(a.size / 1048576) + ' MB';
-            }
-          }
-          /* El comando copiable lleva el nombre exacto del archivo. */
-          document.querySelectorAll('.dl-code').forEach(function (box) {
-            var code = box.querySelector('code');
-            var copy = box.querySelector('.dl-code-copy');
-            if (!code || code.textContent.indexOf('AppImage') === -1) return;
-            code.textContent = 'chmod +x ' + a.name + '\n./' + a.name;
-            if (copy) copy.setAttribute('data-copy',
-              'chmod +x ' + a.name + ' && ./' + a.name);
-          });
+          updateCard('dl-appimage', 'no instala nada', a, 'dl-code-appimage',
+            'chmod +x ' + a.name + '\n./' + a.name,
+            'chmod +x ' + a.name + ' && ./' + a.name);
+        } else if (/\.tar\.gz$/.test(a.name)) {
+          var dir = a.name.replace(/-linux-[^-]+\.tar\.gz$/, '');
+          updateCard('dl-tarball', 'sin FUSE', a, 'dl-code-tarball',
+            'tar -xzf ' + a.name + '\n' + dir + '/ingecad',
+            'tar -xzf ' + a.name + ' && ' + dir + '/ingecad');
         }
       });
     })
