@@ -55,7 +55,7 @@
     },
     "inLanguage": "es",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "softwareVersion": "0.3.0",
+    "softwareVersion": "0.3.1",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -190,7 +190,7 @@
       <p class="hero-sub">Abre DWG y DXF sin conversores. Los mismos comandos y aliases que ya conoces.<br>Nativo en Linux. Código abierto.</p>
       <div class="hero-ctas">
         <a href="#descargar" class="btn btn-primary btn-lg">Descargar IngeCAD gratis</a>
-        <span class="hero-version">Última versión: <span id="latest-version">v0.3.0</span></span>
+        <span class="hero-version">Última versión: <span id="latest-version">v0.3.1</span></span>
       </div>
     </div>
     <div class="hero-screenshot-wrap">
@@ -296,9 +296,10 @@
           <h2>Lo que usas todos los días</h2>
           <p>IngeCAD es un CAD con el espíritu de los programas que ya conoces —AutoCAD, BricsCAD—: los mismos comandos, la misma forma de trabajar y el flujo completo, del primer trazo al plano impreso.</p>
           <ul class="feat-list">
-            <li><strong>Dibujo</strong> — líneas, círculos, arcos, polilíneas, rectángulos, polígonos, elipses, texto, sombreados, líneas auxiliares, dividir y graduar, nube de revisión</li>
+            <li><strong>Dibujo</strong> — líneas, círculos, arcos, polilíneas, rectángulos, polígonos, elipses, splines, tablas, texto, sombreados, líneas auxiliares, dividir y graduar, nube de revisión</li>
             <li><strong>Edición</strong> — BORRAR, DESPLAZA, COPIA, GIRA, ESCALA, SIMETRÍA, EQUIDISTANCIA, RECORTA, ALARGA, EMPALME, DESCOMPONER, pinzamientos</li>
-            <li><strong>Organización</strong> — administrador de capas, propiedades, estilos de texto y cota, bloques</li>
+            <li><strong>Organización</strong> — administrador de capas, propiedades, estilos de texto y cota, bloques, orden de visualización y herramientas de capa</li>
+            <li><strong>Referencias</strong> — imágenes (PNG, JPEG, TIFF…) y páginas de PDF para calcar encima, con brillo, contraste y transparencia</li>
             <li><strong>Salida</strong> — imprime o exporta PDF y PNG <strong>a escala exacta</strong>, verificable con regla</li>
           </ul>
           <p class="feat-muted">Cada comando con sus opciones de siempre: el arco por sus once formas, el círculo por 2P, 3P o TTR, el rectángulo con chaflán o empalme. Deshacer y rehacer de todo, y portapapeles.</p>
@@ -339,7 +340,7 @@
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.3.0</span> — <span id="dl-date">agosto 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.3.1</span> — <span id="dl-date">agosto 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
@@ -357,15 +358,15 @@
           </div>
           <p class="dl-group-alt"><strong>AppImage</strong>: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos):</p>
           <div class="dl-code" id="dl-code-appimage">
-            <code>chmod +x IngeCAD-0.3.0-x86_64.AppImage
-./IngeCAD-0.3.0-x86_64.AppImage</code>
-            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.3.0-x86_64.AppImage && ./IngeCAD-0.3.0-x86_64.AppImage">Copiar</button>
+            <code>chmod +x IngeCAD-0.3.1-x86_64.AppImage
+./IngeCAD-0.3.1-x86_64.AppImage</code>
+            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.3.1-x86_64.AppImage && ./IngeCAD-0.3.1-x86_64.AppImage">Copiar</button>
           </div>
           <p class="dl-group-alt"><strong>tar.gz</strong>: si tu distro no trae FUSE (lo único que un AppImage necesita), descomprime y ejecuta — sirve igual para instalarlo en <code>/opt</code>:</p>
           <div class="dl-code" id="dl-code-tarball">
-            <code>tar -xzf IngeCAD-0.3.0-linux-x86_64.tar.gz
-IngeCAD-0.3.0/ingecad</code>
-            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.3.0-linux-x86_64.tar.gz && IngeCAD-0.3.0/ingecad">Copiar</button>
+            <code>tar -xzf IngeCAD-0.3.1-linux-x86_64.tar.gz
+IngeCAD-0.3.1/ingecad</code>
+            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.3.1-linux-x86_64.tar.gz && IngeCAD-0.3.1/ingecad">Copiar</button>
           </div>
           <p class="dl-group-alt">Los dos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Corren en Ubuntu 22.04 y posteriores. Si algo falla, <code>--check</code> te dice qué falta.</p>
         </div>
