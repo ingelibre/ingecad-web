@@ -65,8 +65,13 @@ falta de nuevo, lo esencial es esas dos líneas.
 reales, no estimados):
 
 - `principal.jpeg` — hero: **0999_3.COBERTURAS.dwg** (4 228 entidades, 32 capas,
-  r2013), el detalle del tijeral T-4 con nudos numerados y cotas. Reusada en «Lo
-  que usas todos los días» **y dentro del banner OG**.
+  r2013), el detalle del tijeral con nudos numerados y cotas. Reusada en «Lo
+  que usas todos los días» **y dentro del banner OG**. **Recapturada por Marco
+  el 2026-08-13 con la v0.4.0** (la anterior era de la v0.1.2 y ya no mostraba
+  ni la barra estándar ni la de propiedades). El parche del banner OG se
+  reemplazó pegando la captura escalada en **(599, 136), 601 px de ancho hasta
+  el borde derecho**, con la altura derivada de la proporción — el resto del
+  banner no se tocó, que es la regla de este archivo.
 - `dwg-colega.jpeg` — **casa.dwg** (200 entidades, 11 capas, **r2018**): planta
   de vivienda con mobiliario, cotas y nombres de ambiente. Va en la sección de
   DWG a propósito: es r2018, o sea la prueba del bullet «Lee DWG hasta AutoCAD
