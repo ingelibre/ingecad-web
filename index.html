@@ -123,7 +123,7 @@
         "name": "¿Cómo lo instalo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Descarga el AppImage de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si tu distro no trae FUSE, descarga el tar.gz en su lugar: lo descomprimes donde quieras y ejecutas ingecad — es el mismo programa, sin envoltorio. También puedes ejecutarlo desde el código fuente con tres comandos."
+          "text": "La vía fácil es el Flatpak: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el AppImage (dale permiso de ejecución y listo, no instala nada) y el tar.gz si tu distro no trae FUSE. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro."
         }
       },
       {
@@ -342,11 +342,16 @@
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.4.0</span> — <span id="dl-date">agosto 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.4.1</span> — <span id="dl-date">agosto 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
           <div class="dl-group-cards">
+            <a class="dl-card dl-card-compact" id="dl-flatpak" href="https://downloads.ingecad.org/flatpak/ingecad.flatpakref">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1 2 4.5v7L8 15l6-3.5v-7L8 1zm0 1.7 4.5 2.6L8 7.9 3.5 5.3 8 2.7zM3 6.6l4.5 2.6v4.4L3 11V6.6zm10 0V11l-4.5 2.6V9.2L13 6.6z"/></svg>
+              <strong>Flatpak</strong>
+              <span>un clic · se actualiza solo</span>
+            </a>
             <a class="dl-card dl-card-compact" id="dl-appimage" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
               <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
               <strong>AppImage</strong>
@@ -358,17 +363,18 @@
               <span>sin FUSE · 123 MB</span>
             </a>
           </div>
+          <p class="dl-group-alt"><strong>Flatpak</strong> (recomendado): el enlace se abre en el centro de software de tu distro — Instalar, y listo. Las actualizaciones llegan solas con las del sistema. Si tu distro no trae Flatpak (Ubuntu): <code>sudo apt install flatpak gnome-software-plugin-flatpak</code> una única vez.</p>
           <p class="dl-group-alt"><strong>AppImage</strong>: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos):</p>
           <div class="dl-code" id="dl-code-appimage">
-            <code>chmod +x IngeCAD-0.4.0-x86_64.AppImage
-./IngeCAD-0.4.0-x86_64.AppImage</code>
-            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.4.0-x86_64.AppImage && ./IngeCAD-0.4.0-x86_64.AppImage">Copiar</button>
+            <code>chmod +x IngeCAD-0.4.1-x86_64.AppImage
+./IngeCAD-0.4.1-x86_64.AppImage</code>
+            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.4.1-x86_64.AppImage && ./IngeCAD-0.4.1-x86_64.AppImage">Copiar</button>
           </div>
           <p class="dl-group-alt"><strong>tar.gz</strong>: si tu distro no trae FUSE (lo único que un AppImage necesita), descomprime y ejecuta — sirve igual para instalarlo en <code>/opt</code>:</p>
           <div class="dl-code" id="dl-code-tarball">
-            <code>tar -xzf IngeCAD-0.4.0-linux-x86_64.tar.gz
-IngeCAD-0.4.0/ingecad</code>
-            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.4.0-linux-x86_64.tar.gz && IngeCAD-0.4.0/ingecad">Copiar</button>
+            <code>tar -xzf IngeCAD-0.4.1-linux-x86_64.tar.gz
+IngeCAD-0.4.1/ingecad</code>
+            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.4.1-linux-x86_64.tar.gz && IngeCAD-0.4.1/ingecad">Copiar</button>
           </div>
           <p class="dl-group-alt">Los dos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Corren en Ubuntu 22.04 y posteriores. Si algo falla, <code>--check</code> te dice qué falta.</p>
         </div>
@@ -430,7 +436,7 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Cómo lo instalo?</summary>
-          <p>Descarga el <strong>AppImage</strong> de la sección Descargar, dale permiso de ejecución y listo: no instala nada en el sistema, y Python, Qt y los conversores de DWG viajan dentro. Si tu distro no trae FUSE, descarga el <strong>tar.gz</strong> en su lugar: lo descomprimes donde quieras (<code>/opt</code>, tu carpeta personal) y ejecutas <code>ingecad</code> — es el mismo programa, sin envoltorio. Si algo no funciona, ejecuta <code>--check</code> y te dice qué le falta. También puedes ejecutarlo desde el código fuente con tres comandos.</p>
+          <p>La vía fácil es el <strong>Flatpak</strong>: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el <strong>AppImage</strong> (dale permiso de ejecución y listo: no instala nada en el sistema) y el <strong>tar.gz</strong> si tu distro no trae FUSE — lo descomprimes donde quieras y ejecutas <code>ingecad</code>. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, ejecuta <code>--check</code> y te dice qué le falta.</p>
         </details>
         <details class="faq-item">
           <summary>¿Hay versión para Windows?</summary>
