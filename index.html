@@ -7,8 +7,8 @@
 
   <title>IngeCAD · CAD 2D libre para Linux, con el espíritu del CAD clásico</title>
 
-  <meta name="description" content="CAD 2D libre con el espíritu del CAD clásico: abre DWG y DXF sin conversores, dibuja con la línea de comandos y los aliases que ya conoces, imprime a escala exacta. Nativo en Linux, sin ribbon. Código abierto GPL-3.0.">
-  <meta name="keywords" content="CAD 2D libre, alternativa a AutoCAD, AutoCAD Linux, abrir DWG en Linux, CAD software libre, DWG DXF Linux, LibreDWG, AutoCAD LT libre, CAD ingeniería civil, dibujo técnico Linux, código abierto, GPL">
+  <meta name="description" content="CAD 2D libre con el espíritu del CAD clásico: abre DWG y DXF sin conversores, dibuja con la línea de comandos y los aliases que ya conoces, imprime a escala exacta, y suma topografía y terreno como complementos. Nativo en Linux, sin ribbon. Código abierto GPL-3.0.">
+  <meta name="keywords" content="CAD 2D libre, alternativa a AutoCAD, AutoCAD Linux, abrir DWG en Linux, CAD software libre, DWG DXF Linux, LibreDWG, AutoCAD LT libre, CAD ingeniería civil, dibujo técnico Linux, topografía Linux, curvas de nivel, cuadro de coordenadas, memoria descriptiva, KML Google Earth, código abierto, GPL">
   <meta name="author" content="Ing. Marco Sumari">
 
   <link rel="canonical" href="https://ingecad.org/">
@@ -45,7 +45,7 @@
     "name": "IngeCAD",
     "operatingSystem": "Linux",
     "applicationCategory": "DesignApplication",
-    "description": "CAD 2D libre en la línea del AutoCAD clásico, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de acad.pgp, referencias a objetos con marcadores AutoSnap, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0.",
+    "description": "CAD 2D libre en la línea del AutoCAD clásico, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de acad.pgp, referencias a objetos con marcadores AutoSnap, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0., y complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth)",
     "url": "https://ingecad.org/",
     "image": "https://ingecad.org/images/logo.png",
     "author": {
@@ -308,6 +308,51 @@
         <figure class="feat-img">
           <img class="zoomable" src="images/screenshots/principal.jpeg"
                alt="El detalle de un tijeral en IngeCAD, con el administrador de capas, las barras estándar, de dibujo y de modificación, la barra de propiedades y las pestañas Modelo y presentación" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 6. Topografía (complemento, v0.6) ── -->
+    <section class="feat feat-alt reveal">
+      <div class="container feat-row feat-reverse">
+        <div class="feat-text">
+          <h2>Topografía, del CSV del topógrafo al plano</h2>
+          <p>Un <strong>complemento</strong> que añade su propio menú: lo enciendes cuando lo necesitas y lo apagas cuando no, y el CAD queda como estaba. Lo que dibuja es DXF corriente —puntos, textos, polilíneas, caras 3D—, así que el plano lo abre cualquier CAD, con o sin IngeCAD.</p>
+          <ul class="feat-list">
+            <li><strong>Puntos</strong> — importa el CSV o TXT de la estación total (<code>P,N,E,Z,D</code> y sus variantes; el orden de columnas se adivina y se corrige), exporta, teclea una poligonal por rumbo y distancia, renumera y busca</li>
+            <li><strong>Cuadro de datos técnicos</strong> — vértice, lado, distancia, rumbo o azimut, ángulo interno, Este y Norte, con área y perímetro: el cuadro que todos armaban a mano</li>
+            <li><strong>Lindero</strong> — rumbos y distancias rotulados, suma de áreas, subdivisión por área, retícula UTM y <strong>memoria descriptiva</strong> con la redacción de los trámites</li>
+            <li><strong>Superficie</strong> — triangulación con líneas de quiebre y contorno, curvas de nivel a su cota con rótulos, y zonas por pendiente</li>
+            <li><strong>Perfiles y movimiento de tierras</strong> — perfil longitudinal con progresivas y cotas, rasante, secciones transversales, corte y relleno por el método prismoidal, con tabla y CSV</li>
+            <li><strong>Plataformas</strong> — cota y pendiente, taludes con bermas hasta la línea cero, y el volumen exacto entre dos superficies</li>
+          </ul>
+          <p class="feat-muted">En la captura: un levantamiento de prueba de 96 puntos en coordenadas UTM de Arequipa. El cuadro y el área —1&nbsp;523,77 m² y 156,70 m— los calculó IngeCAD del lindero dibujado sobre los puntos, y las curvas van cada 0,25 m.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/topografia.jpeg"
+               alt="Un lote topográfico en IngeCAD con sus rumbos y distancias rotulados, el cuadro de construcción con vértices, lados, rumbos, ángulos internos, Este, Norte, área y perímetro, y las curvas de nivel sobre los puntos del levantamiento" width="1600" height="1005" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 7. Terreno y Google Earth (complemento, v0.6) ── -->
+    <section class="feat reveal">
+      <div class="container feat-row">
+        <div class="feat-text">
+          <h2>El terreno debajo de tu plano</h2>
+          <p>El segundo complemento pone el mundo real bajo el dibujo: le dices en qué zona UTM y con qué datum trabajas, y desde ahí IngeCAD sabe dónde está cada punto del plano sobre la Tierra.</p>
+          <ul class="feat-list">
+            <li><strong>Georreferencia</strong> — zona UTM y hemisferio, datum <strong>WGS84</strong> o <strong>PSAD56</strong> para los planos antiguos del Perú; se guarda en el dibujo y se lee al abrirlo</li>
+            <li><strong>Coordenadas geográficas</strong> — lee la latitud y longitud de cualquier punto, o tecléalas en decimales o en grados-minutos-segundos y marca el punto</li>
+            <li><strong>Cotas sin levantamiento</strong> — una malla de puntos con la cota de un modelo de elevación global, lista para triangular y sacar curvas, y el perfil de un eje sin haber ido al campo</li>
+            <li><strong>Imagen satelital</strong> — la foto aérea bajo el plano, remuestreada a tus coordenadas para que caiga donde debe, guardada junto al dibujo y con su atribución escrita en el plano</li>
+            <li><strong>Google Earth de ida y vuelta</strong> — importa KML y KMZ como puntos, polilíneas y polígonos con sus nombres y colores, exporta tu selección a un KMZ que se abre con doble clic, y superpón el plano sobre el terreno</li>
+          </ul>
+          <p class="feat-muted">Honestidad de fábrica: el modelo de elevación global tiene unos 30 m de resolución y el programa te lo dice cada vez —sirve para anteproyecto, no para un levantamiento—. Un lindero exportado a Google Earth y traído de vuelta regresa con <strong>menos de un milímetro</strong> de diferencia.</p>
+        </div>
+        <figure class="feat-img">
+          <img class="zoomable" src="images/screenshots/terreno.jpeg"
+               alt="La imagen satelital de Esri bajo un levantamiento topográfico en IngeCAD, con el lindero y los puntos con cota dibujados encima y la atribución de la fuente escrita en el plano" width="1600" height="1005" loading="lazy">
         </figure>
       </div>
     </section>
