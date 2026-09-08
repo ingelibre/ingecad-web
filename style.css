@@ -414,6 +414,37 @@ code {
   font-size: 15.5px; color: var(--slate-500); line-height: 1.7;
   max-width: 620px; margin: 0 auto 12px;
 }
+/* Tarjetas de la familia: captura discreta arriba, texto y enlaces. */
+.fam-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px; max-width: 920px; margin: 8px auto 0; text-align: left;
+}
+.fam-card {
+  background: var(--white); border: 1px solid var(--silver-300);
+  border-radius: var(--radius); padding: 30px 28px;
+  transition: all 0.2s; display: flex; flex-direction: column; gap: 12px;
+}
+.fam-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-img); }
+.fam-shot {
+  display: block; margin: -30px -28px 6px; border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden; border-bottom: 1px solid var(--silver-300); background: var(--slate-900);
+}
+.fam-shot img { display: block; width: 100%; height: 150px; object-fit: cover; object-position: top; opacity: .88; transition: opacity .2s; }
+.fam-card:hover .fam-shot img { opacity: 1; }
+.fam-tag {
+  align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+}
+.fam-blue .fam-tag { color: var(--blue-dk); background: var(--blue-soft); }
+.fam-orange .fam-tag { color: var(--orange-dk); background: var(--orange-soft); }
+.fam-card h3 { font-size: 22px; font-weight: 800; color: var(--slate-900); letter-spacing: -0.01em; margin: 0; }
+.fam-card p { font-size: 15px; color: var(--slate-500); line-height: 1.65; margin: 0; max-width: none; }
+.fam-links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: auto; }
+.fam-links a { font-weight: 600; text-decoration: none; }
+.fam-blue .fam-links a { color: var(--blue-dk); }
+.fam-orange .fam-links a { color: var(--orange-dk); }
+.fam-links a:hover { text-decoration: underline; }
+
 .bridge .flow {
   display: inline-block; margin: 10px auto 22px;
   font-weight: 700; font-size: 15px; color: var(--blue-dk);
