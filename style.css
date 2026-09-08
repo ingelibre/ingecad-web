@@ -417,7 +417,7 @@ code {
 /* Tarjetas de la familia: captura discreta arriba, texto y enlaces. */
 .fam-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px; max-width: 920px; margin: 8px auto 0; text-align: left;
+  gap: 22px; max-width: 920px; margin: 40px auto 0; text-align: left;
 }
 .fam-card {
   background: var(--white); border: 1px solid var(--silver-300);
@@ -444,6 +444,8 @@ code {
 .fam-blue .fam-links a { color: var(--blue-dk); }
 .fam-orange .fam-links a { color: var(--orange-dk); }
 .fam-links a:hover { text-decoration: underline; }
+.fam-note { font-size: 14px; color: var(--slate-300); margin: 34px auto 0; max-width: none; }
+.fam-note a { color: var(--slate-500); }
 
 .bridge .flow {
   display: inline-block; margin: 10px auto 22px;
