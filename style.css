@@ -612,3 +612,122 @@ code {
 @media print {
   .nav, .hero-ctas, .download-section, .footer { display: none; }
 }
+
+/* ── Apoyar el proyecto (/apoyar) — calcado de ingetrazo.com / ingepresupuestos.com ───── */
+.aporte-card {
+  background: #fff;
+  border: 1px solid #E4E8EC;
+  border-radius: var(--radius);
+  padding: 30px 28px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+.aporte-intro {
+  color: var(--slate-500);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.aporte-intro a { color: var(--accent-dk); text-decoration: none; }
+.aporte-intro a:hover { text-decoration: underline; }
+
+/* El «no puedo aportar» tiene que verse tan claro como los medios de pago. */
+.aporte-cero {
+  margin: 16px 0 0;
+  font-size: 15px;
+  color: var(--slate-500);
+}
+.aporte-link {
+  color: var(--accent-dk);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.aporte-pago {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid #E4E8EC;
+}
+
+.aporte-metodos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.aporte-metodo h4 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: var(--slate-900);
+}
+.aporte-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--accent-dk);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 3px 9px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.aporte-qr {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #E4E8EC;
+}
+.aporte-numero-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 8px;
+  flex-wrap: wrap;
+}
+.aporte-numero {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: var(--slate-900);
+}
+.aporte-correo {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate-900);
+  word-break: break-all;
+}
+.aporte-copiar {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-700);
+  background: var(--silver-100);
+  border: 1px solid #D4D9DE;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.aporte-copiar.copied { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-dk); }
+.aporte-nota {
+  font-size: 13.5px;
+  color: var(--slate-300);
+  line-height: 1.55;
+  margin: 0;
+}
+.aporte-nota-alt { margin-top: 14px; }
+.aporte-liberapay { margin: 10px 0 4px; }
+.aporte-familia {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #E4E8EC;
+}
+.aporte-familia a { color: var(--accent-dk); }
+
+@media (max-width: 720px) {
+  .aporte-card     { padding: 24px 18px; }
+  .aporte-metodos  { grid-template-columns: 1fr; gap: 28px; }
+  /* En el celular no puedes escanear el QR de tu propia pantalla:
+     ahí manda el número copiable, no el código. */
+  .aporte-qr       { display: none; }
+}

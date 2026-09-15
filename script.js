@@ -107,7 +107,7 @@
   }
 
   /* ── Copiar comandos de instalación ─────────────────────────────────── */
-  document.querySelectorAll('.dl-code-copy').forEach(function (btn) {
+  document.querySelectorAll('.dl-code-copy, .aporte-copiar').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var text = btn.getAttribute('data-copy') || '';
       navigator.clipboard.writeText(text).then(function () {
