@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#273445">
+
+  <title>Manual del complemento Topografía · IngeCAD</title>
+
+  <meta name="description" content="Cómo usar el complemento Topografía de IngeCAD: importar los puntos del topógrafo, rotular linderos, cuadro de construcción, memoria descriptiva, triangulación, curvas de nivel, perfiles, secciones, movimiento de tierras y plataformas. Comando por comando, con lo que pregunta y lo que dibuja.">
+
+  <link rel="canonical" href="https://ingecad.org/manual-topografia">
+
+  <meta property="og:site_name" content="IngeCAD">
+  <meta property="og:title" content="Manual del complemento Topografía · IngeCAD">
+  <meta property="og:description" content="Del CSV del topógrafo al plano firmado: puntos, lindero, cuadro de construcción, memoria descriptiva, curvas de nivel, perfiles y movimiento de tierras, comando por comando.">
+  <meta property="og:image" content="https://ingecad.org/images/og-banner.jpg">
+  <meta property="og:url" content="https://ingecad.org/manual-topografia">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_PE">
+
+  <link rel="icon" href="/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/images/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* El manual: texto largo, legible, con el acento del producto en los
+       nombres de comando. Todo lo demás viene de style.css. */
+    .manual { padding: 56px 0 72px; }
+    .manual .container-narrow { max-width: 820px; }
+    .manual-intro { font-size: 17px; color: var(--slate-500); line-height: 1.7; }
+    .manual-toc {
+      background: var(--white); border: 1px solid var(--silver-300);
+      border-radius: var(--radius-sm); padding: 18px 22px; margin: 28px 0 40px;
+    }
+    .manual-toc h4 { margin: 0 0 10px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--slate-500); }
+    .manual-toc ol { margin: 0; padding-left: 22px; list-style: decimal; columns: 2; column-gap: 32px; }
+    .manual-toc li { margin: 4px 0; font-size: 15px; break-inside: avoid; }
+    .manual-toc a { color: var(--slate-700); text-decoration: none; }
+    .manual-toc a:hover { color: var(--accent); }
+    .manual h2 {
+      font-size: 26px; margin: 56px 0 8px; color: var(--slate-700);
+      padding-top: 14px; border-top: 3px solid var(--accent);
+    }
+    .manual h2 small { display: block; font-size: 14px; font-weight: 500; color: var(--slate-500); margin-top: 4px; }
+    .manual h3 {
+      font-size: 18px; margin: 34px 0 6px; color: var(--slate-700);
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+    }
+    .cmd {
+      font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+      font-size: 14px; font-weight: 700; color: var(--white);
+      background: var(--accent); padding: 2px 9px; border-radius: 6px; letter-spacing: .02em;
+    }
+    .cmd-es {
+      font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+      font-size: 13px; color: var(--slate-500);
+    }
+    .manual p, .manual li { font-size: 15.5px; line-height: 1.7; color: var(--slate-700); }
+    .manual p { margin: 0 0 14px; }
+    .manual ul { list-style: disc; padding-left: 22px; margin: 6px 0 12px; }
+    .manual ol { padding-left: 22px; margin: 6px 0 12px; }
+    .manual li { margin: 4px 0; }
+    .manual code {
+      font-size: 13.5px; background: var(--silver-100); border: 1px solid var(--silver-300);
+      border-radius: 4px; padding: 1px 6px; color: var(--slate-700);
+    }
+    .manual pre {
+      background: var(--slate-900); color: #e6edf3; border-radius: var(--radius-sm);
+      padding: 14px 18px; overflow-x: auto; font-size: 13.5px; line-height: 1.55; margin: 10px 0 16px;
+    }
+    .manual pre code { background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+    .manual table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 14.5px; }
+    .manual th, .manual td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--silver-300); vertical-align: top; }
+    .manual th { font-size: 12.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--slate-500); }
+    .manual td code { white-space: nowrap; }
+    .prompt {
+      display: block; margin: 8px 0 8px; padding: 10px 14px;
+      background: var(--silver-100); border-left: 3px solid var(--accent);
+      font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace; font-size: 13.5px; color: var(--slate-700);
+    }
+    .nota {
+      background: #fff8e6; border: 1px solid #f2d98b; border-radius: var(--radius-sm);
+      padding: 12px 16px; margin: 14px 0 18px; font-size: 14.5px;
+    }
+    .nota strong { color: #8a6100; }
+    .capa { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+    .manual figure { margin: 24px 0 8px; }
+    .manual figure img { width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--silver-300); }
+    .manual figcaption { font-size: 13.5px; color: var(--slate-500); margin-top: 8px; }
+    @media (max-width: 640px) { .manual-toc ol { columns: 1; } }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/images/logo.png" alt="IngeCAD" width="32" height="32">
+        <span>IngeCAD</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#features">Características</a>
+        <a href="/#descargar">Descargar</a>
+        <a href="/manual-topografia">Manual</a>
+        <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/apoyar">Apoyar</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MANUAL ============ -->
+  <section class="section bg-light manual">
+    <div class="container container-narrow">
+      <div class="section-head">
+        <h2 style="border:0;margin-top:0;padding-top:0">Manual del complemento Topografía</h2>
+        <p>Del CSV del topógrafo al plano que se firma: puntos, lindero, cuadro de construcción, memoria descriptiva, curvas de nivel, perfiles, movimiento de tierras y plataformas. Comando por comando, con lo que te pregunta y lo que dibuja. Vale para IngeCAD 0.6.</p>
+      </div>
+
+      <p class="manual-intro">Todo lo que dibuja el complemento es <strong>DXF corriente</strong>: puntos, textos, líneas, polilíneas, caras 3D y sombreados en capas con el prefijo <span class="capa">TOPO-</span>. El plano lo abre después cualquier CAD, tenga o no IngeCAD; el número y la descripción de cada punto viajan como datos extendidos de la entidad.</p>
+
+      <figure>
+        <img src="/images/screenshots/topografia.jpeg" alt="Un lote en IngeCAD con sus rumbos y distancias rotulados, el cuadro de construcción y las curvas de nivel sobre los puntos del levantamiento" width="1600" height="1005" loading="lazy">
+        <figcaption>Un levantamiento de 96 puntos: el lindero dibujado sobre los puntos, rotulado con <span class="cmd-es">ROTULAR</span>, su cuadro con <span class="cmd-es">CUADRO</span> y las curvas cada 0,25 m con <span class="cmd-es">CURVAS</span>.</figcaption>
+      </figure>
+
+      <div class="manual-toc">
+        <h4>Contenido</h4>
+        <ol>
+          <li><a href="#empezar">Antes de empezar</a></li>
+          <li><a href="#csv">El archivo de puntos</a></li>
+          <li><a href="#puntos">Puntos</a></li>
+          <li><a href="#poligonos">Lindero y polígonos</a></li>
+          <li><a href="#memoria">Memoria descriptiva y áreas</a></li>
+          <li><a href="#superficie">Superficie (TIN)</a></li>
+          <li><a href="#curvas">Curvas de nivel y pendientes</a></li>
+          <li><a href="#perfiles">Perfiles, secciones y movimiento de tierras</a></li>
+          <li><a href="#plataformas">Plataformas y volúmenes</a></li>
+          <li><a href="#flujo">El flujo completo, de principio a fin</a></li>
+          <li><a href="#terreno">El complemento Terreno</a></li>
+          <li><a href="#capas">Las capas que crea</a></li>
+        </ol>
+      </div>
+
+      <!-- ── 1 ── -->
+      <h2 id="empezar">1. Antes de empezar</h2>
+      <p>Topografía viene incluido y <strong>encendido</strong>: al abrir IngeCAD encuentras el menú <strong>Topografía</strong> entre <em>Modificar</em> y <em>Herramientas</em>, con los submenús <em>Puntos</em>, <em>Polígonos</em>, <em>Superficie</em>, <em>Plataformas</em> y <em>Perfiles</em>. Si no está, o quieres su barra de herramientas, ve a <strong>Herramientas ▸ Complementos…</strong>: ahí se activa, se desactiva y se marca «Mostrar la barra de herramientas de este complemento» (viene apagada para no llenar la pantalla del que solo dibuja).</p>
+      <p>Cada comando se puede escribir en la línea de comandos, <strong>en inglés o en español</strong>, como cualquier comando de IngeCAD: <code>PIMPORT</code> e <code>IMPORTARPUNTOS</code> hacen lo mismo. Los más usados tienen alias de tres letras: <code>PIM</code> importar, <code>PEX</code> exportar, <code>PRN</code> renumerar, <code>PFI</code> buscar. En los prompts con opciones, la letra entre paréntesis es la tecla: en <code>[Rumbo(B)/Distancia(D)/…]</code> escribes <code>B</code> o <code>D</code> y Enter.</p>
+      <p>Dos cosas que te van a servir en todo el manual:</p>
+      <ul>
+        <li><strong>La referencia a objetos <em>Punto</em> (NOD)</strong> engancha exactamente en la coordenada importada, con todos sus decimales. Está encendida de fábrica (F3 la apaga y enciende; el botón REFENT de la barra de estado, con clic derecho, abre la configuración). Dibujar el lindero con <code>PL</code> enganchando a los puntos es lo que hace que el cuadro y el área salgan de las coordenadas del topógrafo y no de un clic aproximado.</li>
+        <li><strong>Todo es un paso de deshacer.</strong> Una importación de 500 puntos, una triangulación o una plataforma completa se deshacen con un <code>U</code> o Ctrl+Z, capas incluidas.</li>
+      </ul>
+
+      <!-- ── 2 ── -->
+      <h2 id="csv">2. El archivo de puntos <small>lo que exportan las estaciones totales y las hojas de cálculo</small></h2>
+      <p>IngeCAD lee archivos <code>.csv</code>, <code>.txt</code>, <code>.pnt</code> y <code>.xyz</code> con una línea por punto. Acepta coma, punto y coma, tabulador o espacios como separador, coma o punto como decimal, y salta las líneas de cabecera y comentarios. La descripción puede tener espacios. El orden de las columnas es uno de estos ocho:</p>
+      <table>
+        <tr><th>Orden</th><th>Columnas</th><th>Ejemplo</th></tr>
+        <tr><td><code>PNEZD</code></td><td>número, Norte, Este, cota, descripción</td><td><code>12,8180140.50,230061.20,2337.40,ESQUINA</code></td></tr>
+        <tr><td><code>PENZD</code></td><td>número, Este, Norte, cota, descripción</td><td><code>12,230061.20,8180140.50,2337.40,ESQUINA</code></td></tr>
+        <tr><td><code>NEZD</code> / <code>ENZD</code></td><td>sin número (se numeran 1, 2, 3…)</td><td><code>8180140.50,230061.20,2337.40,ESQUINA</code></td></tr>
+        <tr><td><code>PNEZ</code>, <code>PENZ</code>, <code>NEZ</code>, <code>ENZ</code></td><td>lo mismo, sin descripción</td><td><code>12,8180140.50,230061.20,2337.40</code></td></tr>
+      </table>
+      <p>Al importar, IngeCAD <strong>adivina el orden</strong> mirando la primera línea y te lo muestra en un diálogo con una vista previa (<code>N=… E=… Z=…</code>) para que lo confirmes o lo cambies. La regla: una Norte UTM tiene un dígito más que su Este (8 180 140 contra 230 061 en el hemisferio sur), así que el tamaño decide; cuando las dos coordenadas miden lo mismo —una malla local del tipo N 1000 / E 2000— se asume <strong>Norte antes que Este</strong>, que es como escriben las estaciones y como exporta el propio IngeCAD.</p>
+      <div class="nota"><strong>Si los puntos aparecen «volteados»</strong> (el plano sale reflejado respecto a la diagonal), el archivo tenía Este antes que Norte: deshaz, vuelve a importar y elige el orden <code>PENZD</code> en el diálogo.</div>
+
+      <!-- ── 3 ── -->
+      <h2 id="puntos">3. Puntos <small>menú Topografía ▸ Puntos</small></h2>
+
+      <h3 id="pimport"><span class="cmd">PIMPORT</span> <span class="cmd-es">IMPORTARPUNTOS · alias PIM</span> — Importar puntos (CSV)…</h3>
+      <p>Elige el archivo y aparece el diálogo de opciones: <strong>orden de columnas</strong> (con la vista previa), <strong>altura de texto</strong> de las etiquetas, qué <strong>etiquetas</strong> dibujar (número, cota, descripción) y los <strong>decimales</strong> de la cota. Aceptar importa todo de una vez y encuadra la vista.</p>
+      <p>Lo que dibuja, por cada punto: un <strong>POINT</strong> en (Este, Norte, Z) en la capa <span class="capa">TOPO-PUNTOS</span> y hasta tres <strong>TEXT</strong> en <span class="capa">TOPO-NUMEROS</span>, <span class="capa">TOPO-COTAS</span> y <span class="capa">TOPO-DESC</span>. La cota va en la Z del punto: el dibujo sigue siendo 2D en planta, pero la altura está ahí para la triangulación. La primera importación en un dibujo nuevo pone el marcador de punto en X (<code>PDMODE</code> 3) para que los puntos se vean; si el dibujo ya tenía un marcador elegido, lo respeta.</p>
+
+      <h3 id="pexport"><span class="cmd">PEXPORT</span> <span class="cmd-es">EXPORTARPUNTOS · alias PEX</span> — Exportar puntos…</h3>
+      <p>Selecciona los puntos que quieres (o Enter para todos los del dibujo) y elige dónde guardar. Escribe <code>P,N,E,Z,D</code> con tres decimales, una línea por punto, con el número y la descripción que tienen en el dibujo. Un archivo exportado así se vuelve a importar tal cual.</p>
+
+      <h3 id="pby"><span class="cmd">PBY</span> <span class="cmd-es">PUNTORUMBO</span> — Punto por rumbo y distancia</h3>
+      <p>Para teclear una poligonal tramo a tramo, como viene en una libreta o en una escritura:</p>
+      <span class="prompt">Precise el punto base:<br>Precise el rumbo (N45°30'E) o azimut:<br>Precise la distancia:<br>Cota &lt;0&gt;:<br>Número de punto &lt;13&gt;:</span>
+      <p>El rumbo se escribe como lo dice el documento: <code>N45°30'20"E</code>, <code>S 12 15 W</code> o un azimut en grados (<code>135.5</code>). Cada punto nuevo pasa a ser la base del siguiente tramo, así que vas metiendo lados hasta que das Enter. Los puntos salen iguales a los importados, numerados a continuación del último.</p>
+
+      <h3 id="prenum"><span class="cmd">PRENUM</span> <span class="cmd-es">RENUMERAR · alias PRN</span> — Renumerar puntos</h3>
+      <p>Selecciona los puntos, indica el número inicial y se renumeran en orden numérico. Cambia la etiqueta y el número guardado en el punto; es un solo paso de deshacer.</p>
+
+      <h3 id="pfind"><span class="cmd">PFIND</span> <span class="cmd-es">BUSCARPUNTO · alias PFI</span> — Buscar punto…</h3>
+      <p>Escribe el número y el punto queda seleccionado y centrado en pantalla.</p>
+
+      <!-- ── 4 ── -->
+      <h2 id="poligonos">4. Lindero y polígonos <small>menú Topografía ▸ Polígonos</small></h2>
+      <p>Estos comandos trabajan sobre <strong>polilíneas y líneas normales</strong> del dibujo. El lindero se dibuja con <code>PL</code> (o <code>PLINE</code>) enganchando a los puntos con la referencia <em>Punto</em>, y se cierra con <code>C</code>. Un lote es una polilínea cerrada; nada más.</p>
+
+      <h3 id="annot"><span class="cmd">ANNOT</span> <span class="cmd-es">ROTULAR</span> — Rotular rumbos y distancias</h3>
+      <p>Selecciona líneas y polilíneas y contesta al prompt:</p>
+      <span class="prompt">Indique opción de rotulado [Rumbo(B)/Distancia(D)/Todo(A)/aZimut(Z)/Altura(H)] o Intro para rotular:</span>
+      <p>Enter rotula con lo elegido (Todo, de fábrica): la <strong>distancia arriba</strong> y el <strong>rumbo abajo</strong> de cada tramo, siempre legibles desde abajo o desde la derecha de la hoja, como los escribe AutoCAD. <code>Z</code> cambia rumbos por azimuts, <code>H</code> pide la altura de texto. En los arcos rotula longitud, radio, delta y cuerda. Todo va en la capa <span class="capa">TOPO-ROTULOS</span>.</p>
+
+      <h3 id="ctable"><span class="cmd">CTABLE</span> <span class="cmd-es">CUADRO</span> — Cuadro de construcción…</h3>
+      <p>Selecciona la polilínea cerrada del lote, elige las opciones (rumbo o azimut, sentido, altura de texto) y designa la <strong>esquina superior izquierda</strong> del cuadro. Sale la tabla que en AutoCAD todos armaban a mano o con un LISP: <strong>vértice, lado, distancia, rumbo o azimut, ángulo interno, Este y Norte</strong>, con el pie de <strong>área y perímetro</strong>, y los rótulos V1…Vn marcados sobre el lindero. Se lista en sentido horario, que es como se lee en el Perú; los ángulos internos suman lo que deben, (n−2)·180°. La tabla es una TABLE del dibujo, en la capa <span class="capa">TOPO-CUADROS</span>.</p>
+
+      <h3 id="areasum"><span class="cmd">AREASUM</span> <span class="cmd-es">SUMAREAS</span> — Suma de áreas</h3>
+      <p>Selecciona polilíneas cerradas y círculos: te dice el área de cada uno y el total en la línea de comandos, y si designas un punto lo escribe en el plano (Enter para no escribirlo).</p>
+
+      <h3 id="subdiv"><span class="cmd">SUBDIV</span> <span class="cmd-es">SUBDIVIDIR</span> — Subdividir polígono…</h3>
+      <p>Corta un lote para dejar una pieza de un área dada. Selecciona la polilínea y elige cómo:</p>
+      <span class="prompt">Dividir por [Paralela(P)/puntO(O)/Dos puntos(T)] &lt;Paralela&gt;:</span>
+      <ul>
+        <li><strong>Paralela</strong>: designas un punto cerca del lado al que el corte irá paralelo, y el área de la pieza que queda junto a ese lado. Es el caso típico: «600 m² desde el frente».</li>
+        <li><strong>puntO</strong>: el corte gira alrededor de un punto del borde hasta dejar el área que pides a su izquierda.</li>
+        <li><strong>Dos puntos</strong>: el corte por donde tú digas; te informa las dos áreas.</li>
+      </ul>
+      <p>Dibuja la línea de corte en <span class="capa">TOPO-SUBDIV</span> y pregunta si <strong>reemplaza el polígono por las dos piezas</strong> (No, de fábrica). El área se ajusta con una precisión de una millonésima de metro cuadrado.</p>
+
+      <h3 id="utmgrid"><span class="cmd">UTMGRID</span> <span class="cmd-es">RETICULA</span> — Retícula UTM…</h3>
+      <p>Dos esquinas (o <code>E</code> para la extensión del dibujo), el espaciado en metros y el estilo, cruces o líneas. Dibuja la retícula con sus rótulos de Este y Norte en <span class="capa">TOPO-RETICULA</span>.</p>
+
+      <!-- ── 5 ── -->
+      <h2 id="memoria">5. Memoria descriptiva y áreas por lote</h2>
+
+      <h3 id="memoria-cmd"><span class="cmd">MEMORIA</span> <span class="cmd-es">MEMORIADESCRIPTIVA</span> — Memoria descriptiva…</h3>
+      <p>Selecciona el lote, designa un punto <strong>cerca del lado del frente</strong>, y contesta lado por lado con quién colinda (texto libre, con espacios), el nombre del lote y la ubicación (distrito, provincia, departamento). Sale la memoria con la redacción de los trámites:</p>
+      <pre><code>Por el frente: colinda con Calle Los Pinos, en línea recta de 26,42 m (lado V4-V1, rumbo N 12°30'15" E).
+Por la derecha entrando: …
+Por el fondo: …
+Por la izquierda entrando: …
+ÁREA: 1 523,77 m²   PERÍMETRO: 156,70 m
+DATOS TÉCNICOS: datum WGS84, zona 19 S</code></pre>
+      <p>Se guarda como <code>.txt</code>, con su cuadro en <code>.csv</code>, y si respondes que sí a «¿Colocar la memoria en el dibujo?» la pone como texto en el plano donde designes. El datum y la zona los toma de la georreferencia del dibujo (comando <code>GEOREF</code> del complemento Terreno); si no hay, lo dice.</p>
+      <div class="nota"><strong>Revísala contra tu trámite.</strong> La redacción sigue la costumbre de los expedientes peruanos (COFOPRI, SUNARP, municipios); cada frase es un texto del paquete de idioma y se puede ajustar. El frente es el lado que designas; los demás se nombran recorriendo el lote en sentido horario desde él.</div>
+
+      <h3 id="areareport"><span class="cmd">AREAREPORT</span> <span class="cmd-es">AREASLOTES</span> — Áreas por lote…</h3>
+      <p>Selecciona varios lotes: sale la tabla de áreas y perímetros con su total, y el CSV. El TEXT escrito dentro de cada lote (el «Lote 3») lo nombra en la tabla.</p>
+
+      <!-- ── 6 ── -->
+      <h2 id="superficie">6. Superficie <small>menú Topografía ▸ Superficie</small></h2>
+
+      <h3 id="tin"><span class="cmd">TIN</span> <span class="cmd-es">TRIANGULAR</span> — Triangular (TIN)…</h3>
+      <p>Selecciona los <strong>puntos</strong> y, si quieres, <strong>líneas y polilíneas como líneas de quiebre</strong> (el borde de una plataforma, el pie de un talud, el lindero): la triangulación respeta esos lados. Luego el nombre de la superficie y una longitud máxima de arista (Enter para ninguna: sirve para que no se cierren triángulos larguísimos en el borde).</p>
+      <p>Dibuja una <strong>cara 3D por triángulo</strong> en <span class="capa">TOPO-TIN</span>, con el nombre de la superficie guardado en cada cara. Es una triangulación de Delaunay propia: 20 000 puntos tardan medio segundo.</p>
+
+      <h3 id="tinedit"><span class="cmd">TINEDIT</span> <span class="cmd-es">EDITARTIN</span> — Editar superficie…</h3>
+      <span class="prompt">Indique opción [Voltear(F)/Suprimir(D)/Insertar(I)/Recortar(C)] o Intro para terminar:</span>
+      <p><strong>Voltear</strong> la arista compartida por dos triángulos, <strong>Suprimir</strong> un triángulo (los del borde que no deberían existir), <strong>Insertar</strong> un punto con cota interpolada, o <strong>Recortar</strong> la superficie por una polilínea. Cada edición es un paso de deshacer.</p>
+
+      <h3 id="tincheck"><span class="cmd">TINCHECK</span> <span class="cmd-es">REVISARTIN</span> — Revisar superficie</h3>
+      <p>Te dice de qué está hecha la superficie de este espacio: triángulos, puntos, aristas, borde, rango de cotas, área en planta y área real.</p>
+
+      <!-- ── 7 ── -->
+      <h2 id="curvas">7. Curvas de nivel y pendientes</h2>
+
+      <h3 id="contour"><span class="cmd">CONTOUR</span> <span class="cmd-es">CURVAS</span> — Curvas de nivel…</h3>
+      <p>Intervalo (por ejemplo <code>0.5</code>), cada cuántas finas va una maestra (<code>5</code> es lo usual) y el suavizado:</p>
+      <span class="prompt">Suavizado [Ninguno(N)/Ligero(L)/Fuerte(S)] &lt;Ninguno&gt; (las curvas suavizadas pueden tocarse):</span>
+      <p>Cada curva es una <strong>polilínea a su cota</strong> (su elevación es la del nivel: cualquier CAD la lee como curva de nivel): las finas en <span class="capa">TOPO-CN-FINA</span> y las maestras en <span class="capa">TOPO-CN-GRUESA</span>. Sin suavizar, dos niveles distintos nunca se cruzan; el suavizado lo advierte porque puede acercarlas.</p>
+
+      <h3 id="contourlabel"><span class="cmd">CONTOURLABEL</span> <span class="cmd-es">ROTULARCURVAS</span> — Rotular curvas…</h3>
+      <span class="prompt">Rotular curvas [Automático(A)/Designar(P)] &lt;Automático&gt;:</span>
+      <p><strong>Automático</strong>: cada N metros a lo largo de la curva, con la altura de texto que digas y en todas o solo en las maestras. <strong>Designar</strong>: haces clic donde quieres cada rótulo. Los rótulos llevan <strong>fondo del color del lienzo</strong> que tapa la curva debajo y se giran para leerse, en <span class="capa">TOPO-CN-TEXTO</span>.</p>
+
+      <h3 id="slopezones"><span class="cmd">SLOPEZONES</span> <span class="cmd-es">PENDIENTES</span> — Zonas de pendiente…</h3>
+      <p>Escribe los cortes de pendiente en porcentaje (<code>1, 2, 3, 5</code>) y designa un punto para la leyenda (Enter para ninguna). Pinta un <strong>sombreado sólido por clase</strong> con los triángulos de la superficie, y la leyenda con muestras, rangos y el área de cada clase, en <span class="capa">TOPO-PENDIENTES</span>.</p>
+
+      <!-- ── 8 ── -->
+      <h2 id="perfiles">8. Perfiles, secciones y movimiento de tierras <small>menú Topografía ▸ Perfiles</small></h2>
+      <p>Todos trabajan sobre la superficie dibujada con <code>TIN</code> y sobre un <strong>eje</strong>, que es una línea o polilínea cualquiera del plano (los arcos se aplanan a un centímetro).</p>
+
+      <h3 id="profile"><span class="cmd">PROFILE</span> <span class="cmd-es">PERFIL</span> — Perfil longitudinal…</h3>
+      <p>Selecciona el eje, el paso de estación (<code>20</code>), las escalas vertical y horizontal (<code>1:100</code>, <code>1:1000</code>) y la <strong>esquina inferior izquierda</strong> del perfil. Dibuja el terreno con su «guitarra»: la banda de progresivas (<code>0+020.00</code>), la banda de cotas de terreno y la grilla de cotas, en <span class="capa">TOPO-PERFIL</span>, <span class="capa">TOPO-PERFIL-GRILLA</span> y <span class="capa">TOPO-PERFIL-TEXTO</span>. Si al seleccionar incluyes una rasante ya definida, sale también la banda RASANTE con sus cotas.</p>
+
+      <h3 id="gradeline"><span class="cmd">GRADELINE</span> <span class="cmd-es">RASANTE</span> — Rasante</h3>
+      <p>Dibuja con <code>PL</code> la rasante <strong>encima del perfil</strong>, entre sus vértices, y luego selecciónala con este comando: pasa a la capa <span class="capa">TOPO-RASANTE</span>, se etiqueta con la <strong>pendiente de cada tramo</strong> y la <strong>cota en cada vértice</strong>, y queda ligada al perfil para las secciones y los volúmenes.</p>
+
+      <h3 id="sections"><span class="cmd">SECTIONS</span> <span class="cmd-es">SECCIONES</span> — Secciones transversales…</h3>
+      <p>Paso de estación, ancho a cada lado y, si hay rasante, la plantilla: ancho de plataforma, talud de corte y de relleno en <strong>H:V</strong> (<code>1</code> es 1:1, <code>1.5</code> es 1,5:1). Designa la esquina superior izquierda y sale una sección del terreno por estación, en grilla de columnas; con rasante, la sección de diseño encima y sus áreas de corte y relleno. Capas <span class="capa">TOPO-SECCIONES</span> y <span class="capa">TOPO-SECCIONES-GRILLA</span>.</p>
+
+      <h3 id="volumes"><span class="cmd">VOLUMES</span> <span class="cmd-es">VOLUMENES</span> — Movimiento de tierras (corte y relleno)…</h3>
+      <span class="prompt">Método de volumen [Prismoidal(P)/Áreas extremas(E)] &lt;Prismoidal&gt;:</span>
+      <p>Con la misma plantilla, calcula las áreas de corte y relleno por estación entre el terreno y el diseño, y los volúmenes por el método <strong>prismoidal</strong> (con la sección media medida, no promediada) o por áreas extremas. Sale la tabla de diez columnas en el plano (designa su esquina, o Enter para no dibujarla) y el <code>.csv</code>, en <span class="capa">TOPO-VOLUMENES</span>.</p>
+
+      <!-- ── 9 ── -->
+      <h2 id="plataformas">9. Plataformas y volúmenes <small>menú Topografía ▸ Plataformas</small></h2>
+
+      <h3 id="platform"><span class="cmd">PLATFORM</span> <span class="cmd-es">PLATAFORMA</span> — Plataforma con taludes…</h3>
+      <p>Selecciona la polilínea cerrada de la plataforma y contesta: la <strong>cota en el primer vértice</strong>, una pendiente en porcentaje y su azimut (opcionales), los taludes de <strong>corte y relleno en H:V</strong>, y las bermas (cada cuántos metros de altura y de qué ancho). Dibuja:</p>
+      <ul>
+        <li>la <strong>línea cero</strong> —donde el talud encuentra el terreno— como polilínea 3D en <span class="capa">TOPO-LINEA-CERO</span>,</li>
+        <li>las <strong>rayas de talud</strong> larga-corta en <span class="capa">TOPO-TALUDES</span>,</li>
+        <li>la <strong>superficie de diseño</strong> como caras 3D con su nombre en <span class="capa">TOPO-TIN-DISENO</span>,</li>
+        <li>y el <strong>corte y relleno</strong> contra el terreno.</li>
+      </ul>
+      <p>La línea cero se estaca como la estacaría una cuadrilla: desde el borde, por la normal, subiendo con el talud de corte si el terreno está arriba o bajando con el de relleno si está abajo, y en las esquinas por la bisectriz, así que el pie redondea la esquina como un talud real.</p>
+
+      <h3 id="daylight"><span class="cmd">DAYLIGHT</span> <span class="cmd-es">LINEACERO</span> — Solo línea cero…</h3>
+      <p>Lo mismo, pero dibuja únicamente la línea cero y las rayas, sin superficie de diseño ni volúmenes.</p>
+
+      <h3 id="voltin"><span class="cmd">VOLTIN</span> <span class="cmd-es">VOLUMENTIN</span> — Volumen entre superficies…</h3>
+      <p>Escribe el nombre de la superficie base (el terreno) y el de la comparada (el diseño): sale el corte y el relleno <strong>exactos</strong> —cada triángulo de diseño se recorta contra cada triángulo del terreno— y, si designas un punto, el rótulo en el plano. Dos superficies iguales dan cero; el terreno subido un metro da exactamente su área.</p>
+
+      <!-- ── 10 ── -->
+      <h2 id="flujo">10. El flujo completo, de principio a fin</h2>
+      <p>Un caso municipal típico, sin salir de IngeCAD:</p>
+      <ol>
+        <li><code>PIMPORT</code> el CSV del topógrafo. Confirma el orden de columnas en la vista previa.</li>
+        <li><code>PL</code> el lindero enganchando a los puntos con la referencia <em>Punto</em>; ciérralo con <code>C</code>.</li>
+        <li><code>ANNOT</code> para rotular rumbos y distancias, <code>CTABLE</code> para el cuadro de construcción con área y perímetro.</li>
+        <li><code>MEMORIA</code> para la memoria descriptiva y <code>AREAREPORT</code> si son varios lotes.</li>
+        <li><code>TIN</code> con los puntos y el lindero como línea de quiebre; <code>CONTOUR</code> y <code>CONTOURLABEL</code> para las curvas; <code>SLOPEZONES</code> si hace falta el plano de pendientes.</li>
+        <li><code>PROFILE</code> del eje de la vía o el canal, <code>GRADELINE</code> sobre él, <code>SECTIONS</code> y <code>VOLUMES</code> para el movimiento de tierras.</li>
+        <li><code>PLATFORM</code> para la cancha o la losa, y <code>VOLTIN</code> para el volumen exacto.</li>
+        <li><strong>Guardar como DWG</strong>: el plano contiene solo puntos, textos, líneas, polilíneas, caras 3D y sombreados, y se abre en el AutoCAD del colega con los 96 puntos, sus números y sus descripciones.</li>
+      </ol>
+
+      <!-- ── 11 ── -->
+      <h2 id="terreno">11. El complemento Terreno <small>menú Terreno</small></h2>
+      <p>Topografía trabaja con las coordenadas del plano; <strong>Terreno</strong> las pone sobre la Tierra. Son ocho comandos, también en inglés o en español:</p>
+      <table>
+        <tr><th>Comando</th><th>Qué hace</th></tr>
+        <tr><td><code>GEOREF</code> · <span class="cmd-es">GEORREFERENCIAR</span></td><td>Zona UTM (o se calcula de una longitud), hemisferio, datum <strong>WGS84</strong> o <strong>PSAD56</strong>. Se guarda en el dibujo y se anuncia al abrirlo; la memoria descriptiva lo lee de aquí.</td></tr>
+        <tr><td><code>LATLON</code> · <span class="cmd-es">GEOGRAFICAS</span></td><td>Designa puntos y lee su latitud y longitud, o tecléalas (<code>-16.4, -71.5</code> o <code>16°26'03" S 71°32'11" W</code>) y marca el punto.</td></tr>
+        <tr><td><code>DEMPOINTS</code> · <span class="cmd-es">PUNTOSDEM</span></td><td>Una malla de puntos con la cota de un modelo de elevación global (unos 30 m de resolución: sirve para anteproyecto, nunca para un levantamiento; el programa te lo recuerda). Lista para <code>TIN</code> y <code>CONTOUR</code>.</td></tr>
+        <tr><td><code>DEMPROFILE</code> · <span class="cmd-es">PERFILDEM</span></td><td>El perfil de un eje leído del mismo modelo, sin triangular.</td></tr>
+        <tr><td><code>SATIMAGE</code> · <span class="cmd-es">IMAGENSATELITAL</span></td><td>La imagen satelital bajo el plano, remuestreada a tus coordenadas, guardada junto al dibujo y con su atribución escrita.</td></tr>
+        <tr><td><code>KMLIN</code> · <span class="cmd-es">IMPORTARKML</span></td><td>Marcas, líneas y polígonos de un KML o KMZ como puntos y polilíneas, con sus nombres y colores.</td></tr>
+        <tr><td><code>KMLOUT</code> · <span class="cmd-es">EXPORTARKML</span></td><td>La selección (o todo el modelo) a un KMZ que Google Earth abre con doble clic.</td></tr>
+        <tr><td><code>KMLOVERLAY</code> · <span class="cmd-es">SUPERPONERKML</span></td><td>El plano como imagen superpuesta sobre el terreno de Google Earth, con el norte arriba.</td></tr>
+      </table>
+
+      <!-- ── 12 ── -->
+      <h2 id="capas">12. Las capas que crea</h2>
+      <p>Todas nacen cuando hacen falta, con el prefijo <span class="capa">TOPO-</span>, y desaparecen si deshaces el comando que las creó. Puedes cambiarles el color o apagarlas como a cualquier capa.</p>
+      <table>
+        <tr><th>Capa</th><th>Contenido</th></tr>
+        <tr><td class="capa">TOPO-PUNTOS</td><td>los puntos importados o tecleados</td></tr>
+        <tr><td class="capa">TOPO-NUMEROS · TOPO-COTAS · TOPO-DESC</td><td>sus etiquetas: número, cota, descripción</td></tr>
+        <tr><td class="capa">TOPO-ROTULOS</td><td>rumbos y distancias de los tramos</td></tr>
+        <tr><td class="capa">TOPO-CUADROS</td><td>el cuadro de construcción y las tablas de áreas y volúmenes</td></tr>
+        <tr><td class="capa">TOPO-RETICULA</td><td>la retícula UTM</td></tr>
+        <tr><td class="capa">TOPO-SUBDIV</td><td>las líneas de corte de una subdivisión</td></tr>
+        <tr><td class="capa">TOPO-TIN · TOPO-TIN-DISENO</td><td>las caras 3D del terreno y de la superficie de diseño</td></tr>
+        <tr><td class="capa">TOPO-CN-FINA · TOPO-CN-GRUESA · TOPO-CN-TEXTO</td><td>curvas finas, maestras y sus rótulos</td></tr>
+        <tr><td class="capa">TOPO-PENDIENTES</td><td>las zonas de pendiente y su leyenda</td></tr>
+        <tr><td class="capa">TOPO-PERFIL · TOPO-PERFIL-GRILLA · TOPO-PERFIL-TEXTO</td><td>el perfil longitudinal y su guitarra</td></tr>
+        <tr><td class="capa">TOPO-RASANTE</td><td>la rasante</td></tr>
+        <tr><td class="capa">TOPO-SECCIONES · TOPO-SECCIONES-GRILLA</td><td>las secciones transversales</td></tr>
+        <tr><td class="capa">TOPO-VOLUMENES</td><td>la tabla de movimiento de tierras</td></tr>
+        <tr><td class="capa">TOPO-LINEA-CERO · TOPO-TALUDES</td><td>la línea cero y las rayas de talud</td></tr>
+      </table>
+
+      <p class="manual-intro" style="margin-top:40px">¿Algo que no cuadra con tu forma de trabajar, un archivo de puntos que no se lee, una redacción de memoria distinta a la de tu trámite? <a href="https://github.com/ingelibre/ingecad/issues" target="_blank" rel="noopener">Cuéntalo en GitHub</a> o escríbenos: cada comando de este manual salió de un pedido así.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="Logo de IngeCAD" width="36" height="36">
+          <strong>IngeCAD</strong>
+        </div>
+        <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
+        <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="/#features">Características</a></li>
+          <li><a href="/#descargar">Descargar</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">Releases</a></li>
+          <li><a href="/manual-topografia">Manual de Topografía</a></li>
+          <li><a href="/apoyar">Apoyar el proyecto</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">Código abierto (GitHub)</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/issues" target="_blank" rel="noopener">Reportar un problema</a></li>
+          <li><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">Licencia GPL-3.0</a></li>
+          <li><a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Familia Inge</h4>
+        <ul>
+          <li><a href="https://ingetrazo.com" target="_blank" rel="noopener">IngeTrazo · modelador 3D</a></li>
+          <li><a href="https://ingepresupuestos.com" target="_blank" rel="noopener">IngePresupuestos</a></li>
+          <li><a href="mailto:ing.sumari@gmail.com">ing.sumari@gmail.com</a></li>
+          <li><a href="https://wa.me/51998839090" target="_blank" rel="noopener">WhatsApp +51 998 839 090</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -133,6 +133,19 @@ archivo aprobado: el mosaico ocupa x 76..171, y 98..189, o sea un render de
 - Iterar local con `python3 -m http.server 8765`; revisar con Chromium headless
   (`--screenshot`) antes de publicar; publicar con `npx wrangler deploy`.
 
+## Manual de Topografía — `manual-topografia.html` (2026-09-22)
+
+Página propia en `/manual-topografia`, enlazada desde el nav y el footer de
+`index.html` y `apoyar.html`, y en el sitemap. Mismo header/footer que
+`apoyar.html` (copiarlos de ahí si cambian) y un `<style>` propio para el texto
+largo (chips `.cmd` con el acento, prompts, tablas, notas). **El contenido sale
+del código del complemento**, no de memoria: los nombres en español de
+`plugins/topografia/i18n/es/commands.json`, los menús y prompts de
+`.../es/ui.json`, las capas de `plugins/topografia/actions.py` (`LAYERS`).
+Si un comando cambia de nombre o de prompt, cambia el manual. Un usuario de
+Bolivia lo pidió por WhatsApp («¿tienes algún manual de uso del módulo de
+topografía?»).
+
 ## Contacto
 
 Ing. Marco Sumari · ing.sumari@gmail.com · WhatsApp +51 998 839 090
