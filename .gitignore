@@ -2,3 +2,6 @@
 node_modules
 .cover-build
 captura
+
+# Notas privadas de trabajo: solo en la máquina del mantenedor
+CLAUDE.md
