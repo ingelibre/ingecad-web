@@ -203,10 +203,10 @@
       <h3 id="annot"><span class="cmd">ANNOT</span> <span class="cmd-es">ROTULAR</span> — Rotular rumbos y distancias</h3>
       <p>Selecciona líneas y polilíneas y contesta al prompt:</p>
       <span class="prompt">Indique opción de rotulado [Rumbo(B)/Distancia(D)/Todo(A)/aZimut(Z)/Altura(H)] o Intro para rotular:</span>
-      <p>Enter rotula con lo elegido (Todo, de fábrica): la <strong>distancia arriba</strong> y el <strong>rumbo abajo</strong> de cada tramo, siempre legibles desde abajo o desde la derecha de la hoja, como los escribe AutoCAD. <code>Z</code> cambia rumbos por azimuts, <code>H</code> pide la altura de texto. En los arcos rotula longitud, radio, delta y cuerda. Todo va en la capa <span class="capa">TOPO-ROTULOS</span>.</p>
+      <p>Enter rotula con lo elegido (Todo, de fábrica): la <strong>distancia arriba</strong> y el <strong>rumbo abajo</strong> de cada tramo, siempre legibles desde abajo o desde la derecha de la hoja, como se rotulan en los planos. <code>Z</code> cambia rumbos por azimuts, <code>H</code> pide la altura de texto. En los arcos rotula longitud, radio, delta y cuerda. Todo va en la capa <span class="capa">TOPO-ROTULOS</span>.</p>
 
       <h3 id="ctable"><span class="cmd">CTABLE</span> <span class="cmd-es">CUADRO</span> — Cuadro de construcción…</h3>
-      <p>Selecciona la polilínea cerrada del lote, elige las opciones (rumbo o azimut, sentido, altura de texto) y designa la <strong>esquina superior izquierda</strong> del cuadro. Sale la tabla que en AutoCAD todos armaban a mano o con un LISP: <strong>vértice, lado, distancia, rumbo o azimut, ángulo interno, Este y Norte</strong>, con el pie de <strong>área y perímetro</strong>, y los rótulos V1…Vn marcados sobre el lindero. Se lista en sentido horario, que es como se lee en el Perú; los ángulos internos suman lo que deben, (n−2)·180°. La tabla es una TABLE del dibujo, en la capa <span class="capa">TOPO-CUADROS</span>.</p>
+      <p>Selecciona la polilínea cerrada del lote, elige las opciones (rumbo o azimut, sentido, altura de texto) y designa la <strong>esquina superior izquierda</strong> del cuadro. Sale la tabla que antes todos armaban a mano o con un LISP: <strong>vértice, lado, distancia, rumbo o azimut, ángulo interno, Este y Norte</strong>, con el pie de <strong>área y perímetro</strong>, y los rótulos V1…Vn marcados sobre el lindero. Se lista en sentido horario, que es como se lee en el Perú; los ángulos internos suman lo que deben, (n−2)·180°. La tabla es una TABLE del dibujo, en la capa <span class="capa">TOPO-CUADROS</span>.</p>
 
       <h3 id="areasum"><span class="cmd">AREASUM</span> <span class="cmd-es">SUMAREAS</span> — Suma de áreas</h3>
       <p>Selecciona polilíneas cerradas y círculos: te dice el área de cada uno y el total en la línea de comandos, y si designas un punto lo escribe en el plano (Enter para no escribirlo).</p>
@@ -370,6 +370,7 @@ DATOS TÉCNICOS: datum WGS84, zona 19 S</code></pre>
         </div>
         <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
         <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
+        <p class="footer-legal" style="font-size:12px;opacity:.7;margin-top:8px">AutoCAD es una marca registrada de Autodesk, Inc.; BricsCAD, de Bricsys; SketchUp, de Trimble Inc. IngeCAD es un proyecto independiente, sin relación con esas empresas.</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
