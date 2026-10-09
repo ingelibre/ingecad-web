@@ -43,7 +43,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "IngeCAD",
-    "operatingSystem": "Linux",
+    "operatingSystem": "Linux, Windows",
     "applicationCategory": "DesignApplication",
     "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de acad.pgp, referencias a objetos con marcadores AutoSnap, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0., y complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth)",
     "url": "https://ingecad.org/",
@@ -55,7 +55,7 @@
     },
     "inLanguage": "es",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "softwareVersion": "0.6.5",
+    "softwareVersion": "0.6.6",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -131,7 +131,7 @@
         "name": "¿Hay versión para Windows?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Todavía no. IngeCAD nació en Linux y esa es la plataforma que hoy está probada; el empaquetado de Windows está en la hoja de ruta y ninguna decisión de diseño lo bloquea. Desde el código fuente ya corre en Windows, pero no lo damos por soportado hasta que exista el instalador."
+          "text": "Sí, desde la versión 0.6.6: un instalador (menú Inicio, «Abrir con» para .dwg y .dxf, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: «Más información» y «Ejecutar de todas formas»."
         }
       },
       {
@@ -192,7 +192,7 @@
       <p class="hero-sub">Abre DWG y DXF sin conversores. Los mismos comandos y aliases que ya conoces.<br>Nativo en Linux. Código abierto.</p>
       <div class="hero-ctas">
         <a href="#descargar" class="btn btn-primary btn-lg">Descargar IngeCAD gratis</a>
-        <span class="hero-version">Última versión: <span id="latest-version">v0.6.0</span></span>
+        <span class="hero-version">Última versión: <span id="latest-version">v0.6.6</span></span>
       </div>
     </div>
     <div class="hero-screenshot-wrap">
@@ -405,7 +405,7 @@
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.6.0</span> — <span id="dl-date">septiembre 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.6.6</span> — <span id="dl-date">octubre 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
@@ -429,17 +429,36 @@
           <p class="dl-group-alt"><strong>Flatpak</strong> (recomendado): el enlace se abre en el centro de software de tu distro — Instalar, y listo. Las actualizaciones llegan solas con las del sistema. Si tu distro no trae Flatpak (Ubuntu): <code>sudo apt install flatpak gnome-software-plugin-flatpak</code> una única vez.</p>
           <p class="dl-group-alt"><strong>AppImage</strong>: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos):</p>
           <div class="dl-code" id="dl-code-appimage">
-            <code>chmod +x IngeCAD-0.6.0-x86_64.AppImage
-./IngeCAD-0.6.0-x86_64.AppImage</code>
-            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.6.0-x86_64.AppImage && ./IngeCAD-0.6.0-x86_64.AppImage">Copiar</button>
+            <code>chmod +x IngeCAD-0.6.6-x86_64.AppImage
+./IngeCAD-0.6.6-x86_64.AppImage</code>
+            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.6.6-x86_64.AppImage && ./IngeCAD-0.6.6-x86_64.AppImage">Copiar</button>
           </div>
           <p class="dl-group-alt"><strong>tar.gz</strong>: si tu distro no trae FUSE (lo único que un AppImage necesita), descomprime y ejecuta — sirve igual para instalarlo en <code>/opt</code>:</p>
           <div class="dl-code" id="dl-code-tarball">
-            <code>tar -xzf IngeCAD-0.6.0-linux-x86_64.tar.gz
-IngeCAD-0.6.0/ingecad</code>
-            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.6.0-linux-x86_64.tar.gz && IngeCAD-0.6.0/ingecad">Copiar</button>
+            <code>tar -xzf IngeCAD-0.6.6-linux-x86_64.tar.gz
+IngeCAD-0.6.6/ingecad</code>
+            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.6.6-linux-x86_64.tar.gz && IngeCAD-0.6.6/ingecad">Copiar</button>
           </div>
           <p class="dl-group-alt">Los dos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Corren en Ubuntu 22.04 y posteriores. Si algo falla, <code>--check</code> te dice qué falta.</p>
+        </div>
+
+        <div class="dl-divider"></div>
+
+        <div class="dl-group">
+          <span class="dl-group-label">Windows · 64 bits</span>
+          <div class="dl-group-cards">
+            <a class="dl-card dl-card-compact" id="dl-win-setup" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 2.3 6.5 1.4v6.1H0V2.3zm7.3-1L16 0v7.5H7.3V1.3zM0 8.4h6.5v6.2L0 13.7V8.4zm7.3 0H16V16l-8.7-1.2V8.4z"/></svg>
+              <strong>Instalador</strong>
+              <span>menú Inicio · abre .dwg</span>
+            </a>
+            <a class="dl-card dl-card-compact" id="dl-win-zip" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3a1 1 0 0 1 1-1h4l1.5 1.5H13a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm6 3v4.29L6.85 9.15l-.7.7L8.5 12.2l2.35-2.35-.7-.7L9 10.29V6H8z"/></svg>
+              <strong>Zip portable</strong>
+              <span>sin instalar</span>
+            </a>
+          </div>
+          <p class="dl-group-alt">El instalador todavía no está firmado: la primera vez Windows SmartScreen avisa que protegió tu PC. Pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>. El zip se descomprime donde quieras y se abre <code>ingecad\ingecad.exe</code>.</p>
         </div>
 
         <div class="dl-divider"></div>
@@ -459,7 +478,7 @@ python3 -m venv venv && venv/bin/pip install -r requirements.txt
 venv/bin/python main.py</code>
             <button class="dl-code-copy" type="button" data-copy="git clone https://github.com/ingelibre/ingecad && cd ingecad && python3 -m venv venv && venv/bin/pip install -r requirements.txt && venv/bin/python main.py">Copiar</button>
           </div>
-          <p class="dl-note">Windows: en camino. Todos los archivos en los <a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">releases de GitHub</a>.</p>
+          <p class="dl-note">Todos los archivos en los <a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">releases de GitHub</a>.</p>
         </div>
       </div>
     </div>
@@ -503,7 +522,7 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Hay versión para Windows?</summary>
-          <p><strong>Todavía no.</strong> IngeCAD nació en Linux y esa es la plataforma que hoy está probada; el empaquetado de Windows está en la hoja de ruta y ninguna decisión de diseño lo bloquea. Desde el código fuente ya corre en Windows, pero no lo damos por soportado hasta que exista el instalador.</p>
+          <p><strong>Sí, desde la versión 0.6.6.</strong> Un instalador (menú Inicio, «Abrir con» para <code>.dwg</code> y <code>.dxf</code>, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: <strong>Más información</strong> ▸ <strong>Ejecutar de todas formas</strong>.</p>
         </details>
         <details class="faq-item">
           <summary>¿Puedo acotar e imprimir a escala desde una presentación?</summary>

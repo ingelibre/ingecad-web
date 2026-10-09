@@ -44,6 +44,10 @@
           updateCard('dl-appimage', 'no instala nada', a, 'dl-code-appimage',
             'chmod +x ' + a.name + '\n./' + a.name,
             'chmod +x ' + a.name + ' && ./' + a.name);
+        } else if (/^ingecad-setup-v.*\.exe$/.test(a.name)) {
+          updateCard('dl-win-setup', 'menú Inicio · abre .dwg', a);
+        } else if (/-windows-x64\.zip$/.test(a.name)) {
+          updateCard('dl-win-zip', 'sin instalar', a);
         } else if (/\.tar\.gz$/.test(a.name)) {
           var dir = a.name.replace(/-linux-[^-]+\.tar\.gz$/, '');
           updateCard('dl-tarball', 'sin FUSE', a, 'dl-code-tarball',
