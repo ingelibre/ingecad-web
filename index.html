@@ -45,7 +45,7 @@
     "name": "IngeCAD",
     "operatingSystem": "Linux, Windows",
     "applicationCategory": "DesignApplication",
-    "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de acad.pgp, referencias a objetos con marcadores AutoSnap, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0., y complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth)",
+    "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de comandos clásicos, referencias a objetos con sus marcadores, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0., y complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth)",
     "url": "https://ingecad.org/",
     "image": "https://ingecad.org/images/logo.png",
     "author": {
@@ -83,7 +83,7 @@
         "name": "¿Abre el DWG que me manda un colega?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, con doble clic y sin pasos intermedios: IngeCAD trae GNU LibreDWG incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee hasta AutoCAD 2018 y guarda DWG r2000, que abre cualquier CAD desde el año 2000."
+          "text": "Sí, con doble clic y sin pasos intermedios: IngeCAD trae GNU LibreDWG incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee DWG hasta la versión 2018 y guarda DWG r2000, que abre cualquier CAD desde el año 2000."
         }
       },
       {
@@ -91,7 +91,7 @@
         "name": "¿Qué hace distinto a IngeCAD?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "IngeCAD es libre, corre nativo en Linux y tiene la interfaz clásica de los CAD: menús, barras y la línea de comandos abajo. Hace lo que usas todos los días (líneas, polilíneas, círculos, bloques, capas, sombreados, cotas, recortar, equidistancia, imprimir a escala) y acepta los aliases de comandos que ya conoces (acad.pgp): escribes L y dibujas una línea."
+          "text": "IngeCAD es libre, corre nativo en Linux y tiene la interfaz clásica de los CAD: menús, barras y la línea de comandos abajo. Hace lo que usas todos los días (líneas, polilíneas, círculos, bloques, capas, sombreados, cotas, recortar, equidistancia, imprimir a escala) y acepta los aliases de comandos que ya conoces: escribes L y dibujas una línea."
         }
       },
       {
@@ -99,7 +99,7 @@
         "name": "¿Tengo que aprender comandos nuevos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. IngeCAD usa los aliases de acad.pgp que ya conoces: L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas (10,5), relativas (@10,5) o polares (@10<45)."
+          "text": "No. IngeCAD usa los aliases de comandos que ya conoces: L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas (10,5), relativas (@10,5) o polares (@10<45)."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "¿Mis planos quedan intactos al guardar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Esa es la promesa central. El modelo de IngeCAD ES la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de Civil 3D, XDATA, diccionarios, sólidos 3D) se conserva intacto al reescribir el archivo. Y como guarda DWG r2000, el plano vuelve en un formato que abre AutoCAD, BricsCAD o cualquier CAD desde el año 2000."
+          "text": "Esa es la promesa central. El modelo de IngeCAD ES la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D) se conserva intacto al reescribir el archivo. Y como guarda DWG r2000, el plano vuelve en un formato que abre cualquier CAD compatible con DWG desde el año 2000."
         }
       },
       {
@@ -212,12 +212,12 @@
           <h2>Abre tus archivos sin conversores</h2>
           <p>DWG y DXF directo, con doble clic. <strong>GNU LibreDWG</strong> viaja dentro de IngeCAD: no instalas nada aparte y nunca ves un archivo intermedio.</p>
           <ul class="feat-list">
-            <li><strong>Lee DWG hasta AutoCAD 2018</strong> — con <a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a> incluido</li>
+            <li><strong>Lee DWG hasta la versión 2018</strong> — con <a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a> incluido</li>
             <li><strong>DXF nativo</strong> de ida y vuelta, en cualquier versión</li>
             <li><strong>Bloques anidados, MTEXT con formato, sombreados, cotas</strong> se dibujan como los guardó el archivo</li>
             <li><strong>Planos grandes</strong> — encuadre y zoom fluidos con decenas de miles de entidades</li>
           </ul>
-          <p class="feat-muted">En la captura: la planta de una vivienda guardada en DWG de AutoCAD 2018, con su mobiliario, cotas y capas.</p>
+          <p class="feat-muted">En la captura: la planta de una vivienda guardada en DWG versión 2018, con su mobiliario, cotas y capas.</p>
         </div>
         <figure class="feat-img">
           <img class="zoomable" src="images/screenshots/dwg-colega.jpeg"
@@ -231,10 +231,10 @@
       <div class="container feat-row feat-reverse">
         <div class="feat-text">
           <h2>Tu plano lo abre cualquier CAD</h2>
-          <p>Guarda en <strong>DWG r2000</strong> y el archivo se abre en AutoCAD, BricsCAD, ZWCAD o el programa que use tu colega. Y lo que IngeCAD no entiende no lo toca: sigue intacto dentro del archivo.</p>
+          <p>Guarda en <strong>DWG r2000</strong> y el archivo se abre en cualquier CAD compatible con DWG, el que use tu colega. Y lo que IngeCAD no entiende no lo toca: sigue intacto dentro del archivo.</p>
           <ul class="feat-list">
             <li><strong>Guarda DWG r2000</strong> — el formato que lee cualquier CAD desde el año 2000</li>
-            <li><strong>Objetos de Civil 3D, XDATA, diccionarios, sólidos 3D</strong> — se conservan tal cual, aunque IngeCAD no los dibuje</li>
+            <li><strong>Objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D</strong> — se conservan tal cual, aunque IngeCAD no los dibuje</li>
             <li><strong>Sistemas de coordenadas UTM</strong> en float64 — un Este de 500 000 no pierde precisión</li>
             <li><strong>Verificación al guardar</strong> — relee el DWG que acaba de escribir y avisa si algo se perdió</li>
           </ul>
@@ -252,7 +252,7 @@
       <div class="container feat-row">
         <div class="feat-text">
           <h2>Escribe <code>L</code> y dibuja una línea</h2>
-          <p>La memoria muscular de años no se tira. La línea de comandos está abajo, donde siempre, y responde a los mismos aliases de <code>acad.pgp</code>.</p>
+          <p>La memoria muscular de años no se tira. La línea de comandos está abajo, donde siempre, y responde a los aliases de comandos que ya conoces.</p>
           <ul class="feat-list">
             <li><strong>L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z</strong></li>
             <li><strong>Espacio y Enter ejecutan</strong>; Enter en vacío repite el último comando; Esc cancela</li>
@@ -498,19 +498,19 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Abre el DWG que me manda un colega?</summary>
-          <p>Sí, con doble clic y sin pasos intermedios: IngeCAD trae <strong>GNU LibreDWG</strong> incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee hasta <strong>AutoCAD 2018</strong> y guarda <strong>DWG r2000</strong>, que abre cualquier CAD desde el año 2000.</p>
+          <p>Sí, con doble clic y sin pasos intermedios: IngeCAD trae <strong>GNU LibreDWG</strong> incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee DWG hasta la <strong>versión 2018</strong> y guarda <strong>DWG r2000</strong>, que abre cualquier CAD desde el año 2000.</p>
         </details>
         <details class="faq-item">
           <summary>¿Qué hace distinto a IngeCAD?</summary>
-          <p>IngeCAD es libre, corre <strong>nativo en Linux</strong> y tiene <strong>la interfaz clásica de los CAD</strong>: menús, barras y la línea de comandos abajo, con los aliases de comandos que ya conoces (acad.pgp): escribes <code>L</code> y dibujas una línea.</p>
+          <p>IngeCAD es libre, corre <strong>nativo en Linux</strong> y tiene <strong>la interfaz clásica de los CAD</strong>: menús, barras y la línea de comandos abajo, con los aliases de comandos que ya conoces: escribes <code>L</code> y dibujas una línea.</p>
         </details>
         <details class="faq-item">
           <summary>¿Tengo que aprender comandos nuevos?</summary>
-          <p>No. IngeCAD usa los aliases de <code>acad.pgp</code> que ya conoces: <code>L</code>, <code>C</code>, <code>A</code>, <code>PL</code>, <code>REC</code>, <code>POL</code>, <code>E</code>, <code>M</code>, <code>CO</code>, <code>RO</code>, <code>O</code>, <code>TR</code>, <code>EX</code>, <code>MI</code>, <code>SC</code>, <code>B</code>, <code>I</code>, <code>H</code>, <code>LA</code>, <code>Z</code>. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas <code>10,5</code>, relativas <code>@10,5</code> o polares <code>@10&lt;45</code>.</p>
+          <p>No. IngeCAD usa los aliases de comandos que ya conoces: <code>L</code>, <code>C</code>, <code>A</code>, <code>PL</code>, <code>REC</code>, <code>POL</code>, <code>E</code>, <code>M</code>, <code>CO</code>, <code>RO</code>, <code>O</code>, <code>TR</code>, <code>EX</code>, <code>MI</code>, <code>SC</code>, <code>B</code>, <code>I</code>, <code>H</code>, <code>LA</code>, <code>Z</code>. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas <code>10,5</code>, relativas <code>@10,5</code> o polares <code>@10&lt;45</code>.</p>
         </details>
         <details class="faq-item">
           <summary>¿Mis planos quedan intactos al guardar?</summary>
-          <p>Esa es la promesa central. El modelo de IngeCAD <strong>es</strong> la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de Civil 3D, XDATA, diccionarios, sólidos 3D) <strong>se conserva intacto</strong> al reescribir el archivo. Los acentos también: las capas <code>CAÑERÍAS</code> y <code>DESAGÜE</code>, las cotas en m² y los textos con Ñ vuelven tal cual. Y como guarda DWG r2000, el plano vuelve en un formato que abre AutoCAD, BricsCAD o cualquier CAD desde el año 2000.</p>
+          <p>Esa es la promesa central. El modelo de IngeCAD <strong>es</strong> la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D) <strong>se conserva intacto</strong> al reescribir el archivo. Los acentos también: las capas <code>CAÑERÍAS</code> y <code>DESAGÜE</code>, las cotas en m² y los textos con Ñ vuelven tal cual. Y como guarda DWG r2000, el plano vuelve en un formato que abre cualquier CAD compatible con DWG desde el año 2000.</p>
         </details>
         <details class="faq-item">
           <summary>¿Funciona sin internet?</summary>
@@ -550,7 +550,7 @@ venv/bin/python main.py</code>
         </div>
         <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
         <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
-        <p class="footer-legal" style="font-size:12px;opacity:.7;margin-top:8px">AutoCAD es una marca registrada de Autodesk, Inc.; BricsCAD, de Bricsys; SketchUp, de Trimble Inc. IngeCAD es un proyecto independiente, sin relación con esas empresas.</p>
+        <p class="footer-legal" style="font-size:12px;opacity:.7;margin-top:8px">IngeCAD es un proyecto independiente, sin relación con ningún fabricante de software CAD.</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
