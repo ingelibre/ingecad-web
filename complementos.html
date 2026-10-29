@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#273445">
+
+  <title>Complementos · IngeCAD</title>
+
+  <meta name="description" content="Complementos para IngeCAD: los incluidos de topografía y terreno, y los que publica la comunidad. Libres, con su código a la vista.">
+
+  <link rel="canonical" href="https://ingecad.org/complementos">
+
+  <meta property="og:site_name" content="IngeCAD">
+  <meta property="og:title" content="Complementos · IngeCAD">
+  <meta property="og:description" content="Topografía y terreno incluidos, y los complementos que publica la comunidad. Libres, con su código a la vista.">
+  <meta property="og:image" content="https://ingecad.org/images/og-banner.jpg">
+  <meta property="og:url" content="https://ingecad.org/complementos">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+
+  <link rel="icon" href="/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/images/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/images/logo.png" alt="IngeCAD" width="32" height="32">
+        <span>IngeCAD</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#features">Características</a>
+        <a href="/#descargar">Descargar</a>
+        <a href="/complementos">Complementos</a>
+        <a href="/manual-topografia">Manual</a>
+        <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/apoyar">Apoyar</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ COMPLEMENTOS ============ -->
+  <!-- Los incluidos están escritos aquí (salen de plugins/<id>/__init__.py
+       del producto). Los de la comunidad los dibuja /complementos.js desde
+       el catalog.json de github.com/ingelibre/ingecad-extensions. -->
+  <main class="section bg-light ext-page">
+    <div class="container">
+      <div class="section-head">
+        <h1>Complementos</h1>
+        <p>IngeCAD es el CAD 2D de todos los días; cada disciplina llega como un complemento que agrega su menú y sus comandos, y que al desactivarlo no deja rastro. Todos son libres y su código está publicado. <a href="#instalar" class="ext-how">¿Cómo se instalan? ↓</a></p>
+      </div>
+
+      <h2 class="ext-all-h">Incluidos en IngeCAD</h2>
+      <p class="ext-lead">Vienen con la aplicación y encendidos. Se activan, se desactivan y se les muestra la barra de herramientas en <strong>Herramientas ▸ Complementos…</strong></p>
+      <div class="ext-grid ext-grid-bundled">
+        <article class="ext-card">
+          <div class="ext-shot ext-shot-none ext-shot-logo"><img src="/images/logo.png" alt="" width="64" height="64"></div>
+          <div class="ext-body">
+            <div class="ext-top">
+              <h3>Topografía</h3>
+              <span class="ext-badge ext-badge-in">Incluido</span>
+            </div>
+            <p class="ext-summary">Puntos desde CSV con su cota, rumbos y distancias, cuadro de datos técnicos, áreas y subdivisión de lotes, superficie TIN, curvas de nivel, perfiles y secciones, plataformas con taludes, volúmenes y memoria descriptiva.</p>
+            <div class="ext-card-tags"><span>Topografía</span><span>Ingeniería civil</span></div>
+            <p class="ext-meta">Menú Topografía · GPL-3.0</p>
+            <div class="ext-links">
+              <a class="btn btn-primary btn-sm" href="/manual-topografia">Leer el manual</a>
+              <a class="ext-code" href="https://github.com/ingelibre/ingecad/tree/main/plugins/topografia" target="_blank" rel="noopener">Ver código →</a>
+            </div>
+          </div>
+        </article>
+        <article class="ext-card">
+          <div class="ext-shot ext-shot-none ext-shot-logo"><img src="/images/logo.png" alt="" width="64" height="64"></div>
+          <div class="ext-body">
+            <div class="ext-top">
+              <h3>Terreno</h3>
+              <span class="ext-badge ext-badge-in">Incluido</span>
+            </div>
+            <p class="ext-summary">Georreferencia el dibujo (UTM, WGS84 o PSAD56, o cualquier sistema por su código EPSG), lee coordenadas geográficas, trae cotas de un modelo de elevación global, pone la imagen satelital bajo el plano e importa y exporta KML/KMZ.</p>
+            <div class="ext-card-tags"><span>SIG</span><span>Ingeniería civil</span></div>
+            <p class="ext-meta">Menú Terreno · GPL-3.0</p>
+            <div class="ext-links">
+              <a class="ext-code" href="https://github.com/ingelibre/ingecad/tree/main/plugins/terreno" target="_blank" rel="noopener">Ver código →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="ext-all-h ext-community-h" id="comunidad">De la comunidad</h2>
+      <div class="ext-tools" id="ext-tools" hidden>
+        <input type="search" id="ext-q" class="ext-search" placeholder="Buscar complementos…" aria-label="Buscar complementos…" autocomplete="off">
+        <label class="ext-only"><input type="checkbox" id="ext-reviewed"> Solo revisados</label>
+        <label class="ext-sort">Ordenar
+          <select id="ext-sort">
+            <option value="">Revisados primero</option>
+            <option value="recent">Más recientes</option>
+            <option value="name">Nombre (A–Z)</option>
+          </select>
+        </label>
+      </div>
+      <div class="ext-tags" id="ext-tags" role="group" aria-label="Filtrar por tema" hidden></div>
+      <p class="ext-count" id="ext-count" aria-live="polite">Cargando el catálogo…</p>
+      <div class="ext-grid" id="ext-grid"></div>
+      <div class="ext-more-row"><button type="button" class="btn ext-more" id="ext-more" hidden></button></div>
+
+      <div class="ext-state" id="ext-empty" hidden>
+        <h3>Aún no hay complementos de la comunidad — publica el tuyo</h3>
+        <p>El catálogo está abierto. Si hiciste un complemento para tu oficio, se agrega con una ficha desde el navegador y aparece aquí en cuanto se aprueba.</p>
+        <a class="btn btn-primary btn-sm" href="https://github.com/ingelibre/ingecad-extensions#español" target="_blank" rel="noopener">Publicar mi complemento</a>
+      </div>
+      <div class="ext-state" id="ext-offline" hidden>
+        <h3>No se pudo cargar el catálogo de la comunidad</h3>
+        <p>Puede ser la conexión. Inténtalo de nuevo en un momento, o mira las fichas directamente en <a href="https://github.com/ingelibre/ingecad-extensions" target="_blank" rel="noopener">github.com/ingelibre/ingecad-extensions</a>.</p>
+      </div>
+      <noscript><p class="ext-empty">Esta lista necesita JavaScript. También puedes ver el catálogo directamente en <a href="https://github.com/ingelibre/ingecad-extensions">github.com/ingelibre/ingecad-extensions</a>.</p></noscript>
+
+      <div class="ext-info">
+        <div class="ext-box" id="instalar">
+          <h2>Cómo instalar</h2>
+          <p>El <strong>centro de extensiones</strong> dentro de la aplicación, que instala desde este catálogo con un clic, llega con <strong>IngeCAD 0.7</strong>. Hasta entonces:</p>
+          <ol>
+          <li>Pulsa <strong>Descargar</strong> en la tarjeta y descomprime el <code>.zip</code>: trae una sola carpeta.</li>
+          <li>Copia esa carpeta en la carpeta de complementos: <code>~/.config/IngeCAD/plugins/</code> en Linux (con Flatpak, <code>~/.var/app/org.ingecad.IngeCAD/config/IngeCAD/plugins/</code>), <code>%APPDATA%\IngeCAD\plugins\</code> en Windows.</li>
+          <li>Vuelve a abrir IngeCAD y enciéndelo en <strong>Herramientas ▸ Complementos…</strong> Los que instalas tú vienen apagados.</li>
+          </ol>
+        </div>
+        <div class="ext-box">
+          <h2>Revisados y de la comunidad</h2>
+          <p><span class="ext-badge ext-badge-ok">Revisado</span> alguien que mantiene IngeCAD leyó el código de esa versión exacta.</p>
+          <p><span class="ext-badge">Comunidad</span> pasó la revisión automática, pero nadie leyó el código a fondo. Instálalo si confías en su autor.</p>
+          <p class="ext-small">Un complemento es un programa con el mismo acceso a tu computadora que IngeCAD. Cada ficha guarda la huella SHA-256 del archivo aprobado; una versión nueva vuelve a «Comunidad» hasta que alguien la lea.</p>
+        </div>
+        <div class="ext-box ext-box-cta" id="publicar">
+          <h2>¿Hiciste un complemento?</h2>
+          <p>Un complemento es una carpeta de Python con un <code>PluginSpec</code>: su menú, sus comandos y sus herramientas. Publícalo aquí con una ficha desde el navegador, sin saber Git; un robot la revisa en un minuto sin ejecutar el código.</p>
+          <a class="btn btn-primary" href="https://github.com/ingelibre/ingecad-extensions#español" target="_blank" rel="noopener">Publicar mi complemento</a>
+          <a class="ext-guide" href="https://github.com/ingelibre/ingecad/blob/main/docs/plugins.md" target="_blank" rel="noopener">Guía para escribir complementos →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="Logo de IngeCAD" width="36" height="36">
+          <strong>IngeCAD</strong>
+        </div>
+        <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
+        <a class="btn btn-heart footer-support" href="/apoyar">Apoyar el proyecto</a>
+        <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
+        <p class="footer-legal">IngeCAD es un proyecto independiente, sin relación con ningún fabricante de software CAD.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="/#features">Características</a></li>
+          <li><a href="/#descargar">Descargar</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">Releases</a></li>
+          <li><a href="/complementos">Complementos</a></li>
+          <li><a href="/manual-topografia">Manual de Topografía</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">Código abierto (GitHub)</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/issues" target="_blank" rel="noopener">Reportar un problema</a></li>
+          <li><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">Licencia GPL-3.0</a></li>
+          <li><a href="https://www.gnu.org/software/libredwg/" target="_blank" rel="noopener">GNU LibreDWG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Familia Inge</h4>
+        <ul>
+          <li><a href="https://ingetrazo.com" target="_blank" rel="noopener">IngeTrazo · modelador 3D</a></li>
+          <li><a href="https://ingepresupuestos.com" target="_blank" rel="noopener">IngePresupuestos</a></li>
+          <li><a href="mailto:ing.sumari@gmail.com">ing.sumari@gmail.com</a></li>
+          <li><a href="https://github.com/ingelibre/ingecad/issues" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/complementos.js"></script>
+</body>
+</html>

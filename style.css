@@ -887,3 +887,113 @@ code {
      ahí manda el número copiable, no el código. */
   .aporte-qr       { display: none; }
 }
+
+/* ============ COMPLEMENTOS (/complementos) — calcado de ingetrazo.com/extensiones ============ */
+.ext-page .section-head h1 {
+  font-size: clamp(30px, 4.4vw, 52px);
+  line-height: 1.05;
+  font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 14px;
+}
+.ext-tools { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 14px; }
+.ext-search {
+  flex: 1 1 320px; max-width: 520px;
+  font: inherit; font-size: 15px; color: var(--text);
+  padding: 11px 14px; border: 1px solid var(--silver-300); border-radius: var(--radius-sm);
+  background: var(--white);
+}
+.ext-search:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.ext-only { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--slate-500); cursor: pointer; }
+.ext-only input { width: 16px; height: 16px; accent-color: var(--accent); }
+.ext-sort { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--slate-500); }
+.ext-sort select {
+  font: inherit; font-size: 14px; color: var(--text);
+  padding: 7px 10px; border: 1px solid var(--silver-300); border-radius: var(--radius-sm);
+  background: var(--white); cursor: pointer;
+}
+.ext-sort select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.ext-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.ext-chip {
+  font: inherit; font-size: 13px; font-weight: 500; color: var(--slate-500);
+  padding: 6px 13px; border-radius: 999px; cursor: pointer;
+  background: var(--white); border: 1px solid var(--silver-300);
+}
+.ext-chip:hover { border-color: var(--accent); color: var(--accent-dk); }
+.ext-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.ext-count { font-size: 14px; color: var(--muted); margin-bottom: 16px; min-height: 1.6em; }
+.ext-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+.ext-more-row { display: flex; justify-content: center; margin-top: 28px; }
+.ext-more { background: var(--white); color: var(--accent-dk); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.ext-more:hover { border-color: var(--accent); }
+.ext-more[hidden] { display: none; }
+.ext-all-h { font-size: 24px; color: var(--head); margin-bottom: 16px; }
+.ext-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+.ext-shot { aspect-ratio: 16 / 10; background: var(--accent-soft); overflow: hidden; }
+.ext-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ext-shot-none { display: grid; place-items: center; }
+.ext-shot-none span { font-size: 56px; font-weight: 800; color: var(--accent); opacity: 0.55; }
+.ext-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.ext-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.ext-top h3 { font-size: 18px; line-height: 1.3; color: var(--head); }
+.ext-author { font-size: 13px; color: var(--muted); }
+.ext-summary { font-size: 15px; line-height: 1.55; color: var(--text); }
+.ext-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ext-card-tags span {
+  font-size: 12px; color: var(--accent-dk); background: var(--accent-soft);
+  padding: 2px 9px; border-radius: 999px;
+}
+.ext-meta { font-size: 12px; color: var(--muted); margin-top: auto; padding-top: 6px; }
+.ext-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.ext-code, .ext-guide { font-size: 14px; font-weight: 600; color: var(--accent-dk); text-decoration: none; }
+.ext-code:hover, .ext-guide:hover { text-decoration: underline; }
+.ext-badge {
+  flex: none; font-size: 11px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+  color: var(--slate-500); background: var(--silver-100); border: 1px solid var(--silver-300);
+}
+.ext-badge-ok { color: var(--accent-dk); background: var(--accent-soft); border-color: rgba(71,155,27,0.35); }
+.ext-empty { padding: 24px 0; color: var(--muted); }
+.ext-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 56px; }
+.ext-box {
+  background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 24px; display: flex; flex-direction: column; gap: 12px;
+}
+.ext-box h2 { font-size: 20px; color: var(--head); }
+.ext-box ol { padding-left: 20px; display: grid; gap: 8px; font-size: 15px; }
+.ext-box p { font-size: 15px; line-height: 1.55; }
+.ext-box .ext-badge { margin-right: 4px; }
+.ext-small { font-size: 13px !important; color: var(--muted); }
+.ext-box-cta { background: var(--night); color: var(--silver-100); }
+.ext-box-cta h2 { color: var(--white); }
+.ext-box-cta .btn { align-self: flex-start; }
+.ext-box-cta .ext-guide { color: var(--accent-lt); }
+@media (max-width: 760px) {
+  .ext-grid { grid-template-columns: 1fr; }
+  .ext-info { margin-top: 40px; }
+}
+
+/* Extensions: the «how do I install one?» link under the title jumps to the
+   install box; the box clears the sticky navbar when it lands. */
+.ext-how { white-space: nowrap; font-weight: 600; }
+#instalar { scroll-margin-top: 90px; }
+.ext-box code { font-size: 0.92em; background: var(--accent-soft); padding: 0 4px; border-radius: 4px; }
+#instalar, #publicar, #comunidad { scroll-margin-top: 90px; }
+.ext-box-cta code { background: rgba(255,255,255,0.12); color: var(--white); }
+/* Propios de IngeCAD: los incluidos (escritos en el HTML) y el estado
+   vacío o sin red del catálogo de la comunidad. */
+.ext-lead { font-size: 15px; color: var(--text); margin: -6px 0 18px; }
+.ext-grid-bundled { margin-bottom: 56px; }
+.ext-grid-bundled .ext-shot { aspect-ratio: 16 / 6; }
+.ext-badge-in { color: var(--white); background: var(--accent); border-color: var(--accent); }
+.ext-tools[hidden], .ext-tags[hidden], .ext-count[hidden], .ext-state[hidden] { display: none; }
+.ext-state {
+  background: var(--white); border: 1px dashed rgba(71,155,27,0.45); border-radius: var(--radius);
+  padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;
+}
+.ext-state h3 { font-size: 18px; color: var(--head); }
+.ext-state p { font-size: 15px; line-height: 1.55; color: var(--text); max-width: 720px; }
+.ext-shot-logo img { width: 64px; height: 64px; opacity: 0.9; }
+.ext-box code { overflow-wrap: anywhere; }
