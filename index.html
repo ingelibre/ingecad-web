@@ -7,7 +7,7 @@
 
   <title>IngeCAD · CAD 2D libre para Linux, con el espíritu del CAD clásico</title>
 
-  <meta name="description" content="CAD 2D libre con el espíritu del CAD clásico: abre DWG y DXF sin conversores, dibuja con la línea de comandos y los aliases que ya conoces, imprime a escala exacta, y suma topografía y terreno como complementos. Nativo en Linux, sin ribbon. Código abierto GPL-3.0.">
+  <meta name="description" content="CAD 2D libre con el espíritu del CAD clásico: abre DWG y DXF sin conversores, dibuja con la línea de comandos y los aliases que ya conoces, imprime a escala exacta, y suma topografía y terreno como complementos. Nativo en Linux, también en Windows, sin ribbon. Código abierto GPL-3.0.">
   <meta name="keywords" content="CAD 2D libre, abrir DWG en Linux, CAD software libre, DWG DXF Linux, LibreDWG, CAD ingeniería civil, dibujo técnico Linux, topografía Linux, curvas de nivel, cuadro de coordenadas, memoria descriptiva, KML Google Earth, código abierto, GPL">
   <meta name="author" content="Ing. Marco Sumari">
 
@@ -15,7 +15,7 @@
 
   <meta property="og:site_name" content="IngeCAD">
   <meta property="og:title" content="IngeCAD · CAD 2D libre para Linux, con el espíritu del CAD clásico">
-  <meta property="og:description" content="Abre DWG y DXF sin conversores, dibuja con los aliases de comandos que ya conoces, imprime a escala exacta. Libre y de código abierto (GPL-3.0). Nativo en Linux.">
+  <meta property="og:description" content="Abre DWG y DXF sin conversores, dibuja con los aliases de comandos que ya conoces, imprime a escala exacta. Libre y de código abierto (GPL-3.0). Nativo en Linux, también en Windows.">
   <meta property="og:image" content="https://ingecad.org/images/og-banner.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -45,8 +45,11 @@
     "name": "IngeCAD",
     "operatingSystem": "Linux, Windows",
     "applicationCategory": "DesignApplication",
-    "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de comandos clásicos, referencias a objetos con sus marcadores, capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Nativo en Linux y Wayland, sin ribbon. Código abierto bajo GPL-3.0., y complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth)",
+    "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de comandos clásicos, referencias a objetos con sus marcadores, capas y grupos de capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth), y un asistente de IA opcional, apagado de fábrica. Nativo en Linux y Wayland, también en Windows, sin ribbon. Código abierto bajo GPL-3.0.",
     "url": "https://ingecad.org/",
+    "softwareVersion": "0.6.9",
+    "downloadUrl": "https://github.com/ingelibre/ingecad/releases/latest",
+    "screenshot": "https://ingecad.org/images/screenshots/principal.jpeg",
     "image": "https://ingecad.org/images/logo.png",
     "author": {
       "@type": "Person",
@@ -55,7 +58,6 @@
     },
     "inLanguage": "es",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "softwareVersion": "0.6.9",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -75,7 +77,7 @@
         "name": "¿Es gratis de verdad?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. IngeCAD es software libre bajo licencia GPL-3.0: gratis hoy y para siempre, con el código fuente publicado en GitHub. Sin cuentas, sin suscripciones, sin funciones bloqueadas."
+          "text": "Sí. IngeCAD es software libre bajo GPL-3.0: gratis hoy y para siempre, con el código fuente publicado en GitHub. Sin cuentas, sin suscripciones, sin funciones bloqueadas."
         }
       },
       {
@@ -83,7 +85,7 @@
         "name": "¿Abre el DWG que me manda un colega?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, con doble clic y sin pasos intermedios: IngeCAD trae GNU LibreDWG incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee DWG hasta la versión 2018 y guarda DWG r2000, que abre cualquier CAD desde el año 2000."
+          "text": "Sí, con doble clic y sin pasos intermedios: IngeCAD trae GNU LibreDWG incluido y convierte el DWG por dentro, sin que veas nunca el DXF. Lee DWG hasta la versión 2018 y guarda DWG r2000, que abre cualquier CAD desde el año 2000."
         }
       },
       {
@@ -99,7 +101,7 @@
         "name": "¿Tengo que aprender comandos nuevos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. IngeCAD usa los aliases de comandos que ya conoces: L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas (10,5), relativas (@10,5) o polares (@10<45)."
+          "text": "No. IngeCAD usa los aliases de comandos que ya conoces: L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z. Espacio y Enter ejecutan, Enter en vacío repite el último comando, Esc cancela. Puedes escribir coordenadas absolutas 10,5, relativas @10,5 o polares @10<45."
         }
       },
       {
@@ -107,7 +109,7 @@
         "name": "¿Mis planos quedan intactos al guardar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Esa es la promesa central. El modelo de IngeCAD ES la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D) se conserva intacto al reescribir el archivo. Y como guarda DWG r2000, el plano vuelve en un formato que abre cualquier CAD compatible con DWG desde el año 2000."
+          "text": "Esa es la promesa central. El modelo de IngeCAD es la base de datos del DXF, así que todo lo que el programa no entiende (objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D) se conserva intacto al reescribir el archivo. Los acentos también: las capas CAÑERÍAS y DESAGÜE, las cotas en m² y los textos con Ñ vuelven tal cual. Y como guarda DWG r2000, el plano vuelve en un formato que abre cualquier CAD compatible con DWG desde el año 2000."
         }
       },
       {
@@ -115,7 +117,7 @@
         "name": "¿Funciona sin internet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, todo. IngeCAD no consulta ningún servidor: no tiene cuentas, ni nube, ni telemetría. Tus planos viven en tu PC."
+          "text": "Sí. Todo el CAD funciona sin conexión: no tiene cuentas, ni nube, ni telemetría, y tus planos viven en tu PC. Solo se conecta cuando tú se lo pides: el complemento Terreno, al traer la imagen satelital o las cotas del modelo de elevación, y el asistente de IA, si lo enciendes con un proveedor en la nube."
         }
       },
       {
@@ -123,7 +125,7 @@
         "name": "¿Cómo lo instalo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La vía fácil es el Flatpak: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el AppImage (dale permiso de ejecución y listo, no instala nada) y el tar.gz si tu distro no trae FUSE. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro."
+          "text": "La vía fácil es el Flatpak: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el AppImage (dale permiso de ejecución y listo: no instala nada en el sistema), el tar.gz si tu distro no trae FUSE —lo descomprimes donde quieras y ejecutas ingecad— y el archivo .snap. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, ejecuta --check y te dice qué le falta."
         }
       },
       {
@@ -131,7 +133,7 @@
         "name": "¿Hay versión para Windows?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, desde la versión 0.6.6: un instalador (menú Inicio, «Abrir con» para .dwg y .dxf, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: «Más información» y «Ejecutar de todas formas»."
+          "text": "Sí, desde la versión 0.6.6: un instalador (menú Inicio, «Abrir con» para .dwg y .dxf, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: Más información ▸ Ejecutar de todas formas."
         }
       },
       {
@@ -147,7 +149,15 @@
         "name": "¿Y la topografía: puntos, cuadro de coordenadas, perfiles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ya está, desde la v0.6, como complemento Topografía: importa el CSV del topógrafo con cotas, arma el cuadro de datos técnicos (Este/Norte, lados, rumbos, área y perímetro), triangula, traza curvas de nivel, perfiles, secciones y movimiento de tierras, y redacta la memoria descriptiva. Y el complemento Terreno georreferencia el plano, trae cotas de un DEM global y la imagen satelital, y va y vuelve de Google Earth por KML/KMZ. Todo lo que dibujan es DXF plano que abre cualquier CAD."
+          "text": "Ya está, desde la v0.6, como complemento Topografía: importa el CSV del topógrafo con cotas, arma el cuadro de datos técnicos (Este/Norte, lados, rumbos, área y perímetro), triangula, traza curvas de nivel, perfiles, secciones y movimiento de tierras, y redacta la memoria descriptiva. Y el complemento Terreno georreferencia el plano, trae cotas de un modelo de elevación global y la imagen satelital, y va y vuelve de Google Earth por KML/KMZ. Todo lo que dibujan es DXF plano que abre cualquier CAD. El paso a paso está en el manual de Topografía."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tiene inteligencia artificial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, y viene apagada. Si la enciendes en Herramientas ▸ Opciones, una pestaña de la barra lateral habla con el modelo que elijas (en la nube con tu propia clave, o uno local) y trabaja con los mismos comandos que tú escribes: cada paso queda en el historial y una sola U deshace todo su turno. Con ingecad --mcp, un asistente de escritorio o un editor de código puede manejar el dibujo abierto. Sin IA, IngeCAD funciona igual."
         }
       },
       {
@@ -155,7 +165,7 @@
         "name": "¿Cómo reporto un problema o contribuyo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El proyecto vive en GitHub: abre un issue con tu plano de ejemplo, propón mejoras o envía código. Si un DWG no abre bien, ese archivo es lo más valioso que puedes aportar — varios arreglos de esta versión salieron justamente de planos reales que fallaban."
+          "text": "El proyecto vive en GitHub: abre un issue con tu plano de ejemplo, propón mejoras o envía código. Si un DWG no abre bien, ese archivo es lo más valioso que puedes aportar: muchos arreglos salieron justamente de planos reales que fallaban, y decenas ya son parches aceptados en GNU LibreDWG."
         }
       }
     ]
@@ -163,6 +173,12 @@
   </script>
 </head>
 <body>
+
+  <!-- ============ AVISO DE NUEVA VERSIÓN ============ -->
+  <div class="announce" id="announce">
+    <p><strong>Nuevo:</strong> IngeCAD <span id="announce-version">v0.6.9</span> ya disponible — <a href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">ver novedades →</a></p>
+    <button type="button" class="announce-close" aria-label="Cerrar aviso">×</button>
+  </div>
 
   <!-- ============ HEADER ============ -->
   <header class="nav">
@@ -187,26 +203,55 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="container hero-center">
-      <h1>El CAD 2D libre<br>con el espíritu del CAD clásico</h1>
-      <p class="hero-sub">Abre DWG y DXF sin conversores. Los mismos comandos y aliases que ya conoces.<br>Nativo en Linux. Código abierto.</p>
+    <div class="hero-center">
+      <span class="hero-badge">Software libre · GPL-3.0</span>
+      <h1>El CAD 2D libre con el espíritu del <span class="grad-text">CAD clásico</span>.</h1>
+      <p class="hero-lead">Abre DWG y DXF sin conversores y dibuja con los comandos y aliases que ya conoces.</p>
+      <p class="hero-name"><strong>Nativo en Linux</strong>, también en Windows · Última versión: <span id="latest-version">v0.6.9</span></p>
       <div class="hero-ctas">
-        <a href="#descargar" class="btn btn-primary btn-lg">Descargar IngeCAD gratis</a>
-        <span class="hero-version">Última versión: <span id="latest-version">v0.6.9</span></span>
+        <a href="#descargar" class="btn btn-primary btn-lg" id="hero-dl">Descargar IngeCAD</a>
+        <a href="https://github.com/ingelibre/ingecad" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Ver el código</a>
       </div>
     </div>
     <div class="hero-screenshot-wrap">
-      <img class="hero-img" src="images/screenshots/principal.jpeg"
+      <img class="hero-img zoomable" src="images/screenshots/principal.jpeg"
            alt="IngeCAD con un plano de estructuras abierto: el detalle de un tijeral con sus nudos numerados y acotados, la barra de propiedades con capa, color y grosor, y el administrador de capas"
            width="1600" height="1005" loading="eager" fetchpriority="high">
     </div>
   </section>
 
+  <!-- ============ CIFRAS ============ -->
+  <!-- descargas y estrellas: script.js las lee en vivo de la API de GitHub;
+       el HTML trae lo medido el 2026-10-29 (6 320 descargas, 129 estrellas). -->
+  <section class="stats" aria-label="IngeCAD en cifras">
+    <div class="container stats-row">
+      <div class="stat"><strong data-stat="downloads">6.300+</strong><span>descargas</span></div>
+      <div class="stat"><strong data-stat="stars">129</strong><span>estrellas en GitHub</span></div>
+      <div class="stat"><strong>DWG · DXF</strong><span>abre y guarda</span></div>
+      <div class="stat"><strong>7</strong><span>idiomas de interfaz</span></div>
+      <div class="stat"><strong>2</strong><span>Linux · Windows</span></div>
+      <div class="stat"><strong>GPL-3.0</strong><span>libre para siempre</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 3 PASOS ============ -->
+  <section class="steps" aria-label="Cómo funciona">
+    <div class="container">
+      <h2>Del DWG al plano impreso en 3 pasos</h2>
+      <ol class="steps-row">
+        <li class="step"><span class="step-n">1</span><h3>Abre</h3><p>Doble clic en el DWG o DXF que te mandaron: se abre tal cual, sin conversores ni archivos intermedios.</p></li>
+        <li class="step"><span class="step-n">2</span><h3>Dibuja</h3><p>Escribe <code>L</code>, <code>PL</code> o <code>TR</code> en la línea de comandos, con referencias a objetos y coordenadas por teclado.</p></li>
+        <li class="step"><span class="step-n">3</span><h3>Imprime</h3><p>Arma la lámina en una presentación y sácala a PDF a escala exacta, o guárdala en DWG para tu colega.</p></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- ============ FEATURES ============ -->
   <div id="features">
+    <div class="container features-head"><h2>Todo lo que necesitas para dibujar, acotar e imprimir</h2></div>
 
     <!-- ── 1. DWG de fábrica — rojo suave (eje X del icono) ── -->
-    <section class="feat feat-terra reveal">
+    <section class="feat feat-dwg reveal">
       <div class="container feat-row">
         <div class="feat-text">
           <h2>Abre tus archivos sin conversores</h2>
@@ -216,6 +261,7 @@
             <li><strong>DXF nativo</strong> de ida y vuelta, en cualquier versión</li>
             <li><strong>Bloques anidados, MTEXT con formato, sombreados, cotas</strong> se dibujan como los guardó el archivo</li>
             <li><strong>Planos grandes</strong> — encuadre y zoom fluidos con decenas de miles de entidades</li>
+            <li><strong>Varios dibujos abiertos</strong> en pestañas de la misma ventana, con copiar y pegar entre ellos</li>
           </ul>
           <p class="feat-muted">En la captura: la planta de una vivienda guardada en DWG versión 2018, con su mobiliario, cotas y capas.</p>
         </div>
@@ -226,8 +272,8 @@
       </div>
     </section>
 
-    <!-- ── 2. La tesis: fidelidad del archivo — gradiente lime ── -->
-    <section class="feat feat-bim reveal">
+    <!-- ── 2. La tesis: fidelidad del archivo — degradado lime ── -->
+    <section class="feat feat-fidelity reveal">
       <div class="container feat-row feat-reverse">
         <div class="feat-text">
           <h2>Tu plano lo abre cualquier CAD</h2>
@@ -235,7 +281,7 @@
           <ul class="feat-list">
             <li><strong>Guarda DWG r2000</strong> — el formato que lee cualquier CAD desde el año 2000</li>
             <li><strong>Objetos propietarios de otros programas, XDATA, diccionarios, sólidos 3D</strong> — se conservan tal cual, aunque IngeCAD no los dibuje</li>
-            <li><strong>Sistemas de coordenadas UTM</strong> en float64 — un Este de 500 000 no pierde precisión</li>
+            <li><strong>Coordenadas UTM</strong> en doble precisión — un Este de 500 000 no pierde precisión</li>
             <li><strong>Verificación al guardar</strong> — relee el DWG que acaba de escribir y avisa si algo se perdió</li>
           </ul>
           <p class="feat-muted-light">Trabajar sobre el plano de otro no debería degradarlo, y devolverlo tampoco debería obligar a nadie a cambiar de programa.</p>
@@ -248,16 +294,16 @@
     </section>
 
     <!-- ── 3. La línea de comandos ── -->
-    <section class="feat reveal">
+    <section class="feat feat-plain reveal">
       <div class="container feat-row">
         <div class="feat-text">
           <h2>Escribe <code>L</code> y dibuja una línea</h2>
           <p>La memoria muscular de años no se tira. La línea de comandos está abajo, donde siempre, y responde a los aliases de comandos que ya conoces.</p>
           <ul class="feat-list">
-            <li><strong>L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z</strong></li>
+            <li><strong>L, C, A, PL, REC, POL, E, M, CO, RO, O, TR, EX, MI, SC, B, I, H, LA, Z</strong> — y tus propios aliases en el archivo <code>.pgp</code> de siempre</li>
             <li><strong>Espacio y Enter ejecutan</strong>; Enter en vacío repite el último comando; Esc cancela</li>
-            <li><strong>Coordenadas por teclado</strong> — absolutas <code>10,5</code>, relativas <code>@10,5</code>, polares <code>@10&lt;45</code></li>
-            <li><strong>Selección ventana y cruce</strong> con sus colores de siempre (azul la ventana, verde el cruce), REFENT con sus marcadores</li>
+            <li><strong>Coordenadas por teclado</strong> — absolutas <code>10,5</code>, relativas <code>@10,5</code>, polares <code>@10&lt;45</code>, y con cuentas: <code>43.3/3</code>, <code>@20*2&lt;45</code></li>
+            <li><strong>Selección ventana y cruce</strong> con sus colores de siempre, referencias a objetos con sus marcadores, ORTO, POLAR y rastreo</li>
           </ul>
           <p class="feat-muted">Interfaz clásica anterior al ribbon: barra de menús, barras de herramientas acoplables, ventana de comandos y barra de estado. El ribbon no existe ni va a existir.</p>
         </div>
@@ -268,8 +314,8 @@
       </div>
     </section>
 
-    <!-- ── 4. Presentaciones y acotado (v0.2) ── -->
-    <section class="feat feat-alt reveal">
+    <!-- ── 4. Presentaciones y acotado ── -->
+    <section class="feat feat-plain reveal">
       <div class="container feat-row feat-reverse">
         <div class="feat-text">
           <h2>Acota y arma la lámina</h2>
@@ -291,7 +337,7 @@
     </section>
 
     <!-- ── 5. Dibujo, edición y salida ── -->
-    <section class="feat reveal">
+    <section class="feat feat-plain reveal">
       <div class="container feat-row">
         <div class="feat-text">
           <h2>Lo que usas todos los días</h2>
@@ -299,10 +345,10 @@
           <ul class="feat-list">
             <li><strong>Dibujo</strong> — líneas, círculos, arcos, polilíneas, rectángulos, polígonos, elipses, splines, tablas, texto, sombreados, líneas auxiliares, dividir y graduar, nube de revisión</li>
             <li><strong>Edición</strong> — BORRAR, DESPLAZA, COPIA, GIRA, ESCALA, SIMETRÍA, EQUIDISTANCIA, RECORTA, ALARGA, EMPALME, DESCOMPONER, pinzamientos</li>
-            <li><strong>Organización</strong> — administrador de capas, propiedades, estilos de texto y cota, bloques, orden de visualización y herramientas de capa</li>
-            <li><strong>Referencias</strong> — imágenes (PNG, JPEG, TIFF…) y páginas de PDF para calcar encima, con brillo, contraste y transparencia</li>
+            <li><strong>Organización</strong> — administrador de capas, propiedades, estilos de texto y cota, bloques con atributos, orden de visualización y herramientas de capa</li>
+            <li><strong>Referencias</strong> — dibujos externos, imágenes (PNG, JPEG, TIFF…) y páginas de PDF para calcar encima, con brillo, contraste y transparencia</li>
             <li><strong>Selección y búsqueda</strong> — menú del botón derecho clásico, aislar objetos, seleccionar similares, selección rápida por propiedades, grupos, buscar y reemplazar textos, calculadora</li>
-            <li><strong>Salida</strong> — imprime o exporta PDF y PNG <strong>a escala exacta</strong>, verificable con regla</li>
+            <li><strong>Salida</strong> — imprime o exporta PDF y PNG <strong>a escala exacta</strong>, verificable con regla, y varias presentaciones en un solo PDF</li>
           </ul>
           <p class="feat-muted">Cada comando con sus opciones de siempre: el arco por sus once formas, el círculo por 2P, 3P o TTR, el rectángulo con chaflán o empalme. Deshacer y rehacer de todo, y portapapeles.</p>
         </div>
@@ -313,7 +359,7 @@
       </div>
     </section>
 
-    <!-- ── 6. Topografía (complemento, v0.6) ── -->
+    <!-- ── 6. Topografía (complemento) — lime suave ── -->
     <section class="feat feat-alt reveal">
       <div class="container feat-row feat-reverse">
         <div class="feat-text">
@@ -328,6 +374,7 @@
             <li><strong>Plataformas</strong> — cota y pendiente, taludes con bermas hasta la línea cero, y el volumen exacto entre dos superficies</li>
           </ul>
           <p class="feat-muted">En la captura: un levantamiento de prueba de 96 puntos en coordenadas UTM de Arequipa. El cuadro y el área —1&nbsp;523,77 m² y 156,70 m— los calculó IngeCAD del lindero dibujado sobre los puntos, y las curvas van cada 0,25 m.</p>
+          <p><a class="feat-link" href="/manual-topografia">Manual del complemento, comando por comando →</a></p>
         </div>
         <figure class="feat-img">
           <img class="zoomable" src="images/screenshots/topografia.jpeg"
@@ -336,14 +383,14 @@
       </div>
     </section>
 
-    <!-- ── 7. Terreno y Google Earth (complemento, v0.6) ── -->
-    <section class="feat reveal">
+    <!-- ── 7. Terreno y Google Earth (complemento) ── -->
+    <section class="feat feat-plain reveal">
       <div class="container feat-row">
         <div class="feat-text">
           <h2>El terreno debajo de tu plano</h2>
           <p>El segundo complemento pone el mundo real bajo el dibujo: le dices en qué zona UTM y con qué datum trabajas, y desde ahí IngeCAD sabe dónde está cada punto del plano sobre la Tierra.</p>
           <ul class="feat-list">
-            <li><strong>Georreferencia</strong> — zona UTM y hemisferio, datum <strong>WGS84</strong> o <strong>PSAD56</strong> para los planos antiguos del Perú; se guarda en el dibujo y se lee al abrirlo</li>
+            <li><strong>Georreferencia</strong> — zona UTM y hemisferio, datum <strong>WGS84</strong> o <strong>PSAD56</strong> para los planos antiguos del Perú, o cualquier sistema proyectado por su código EPSG; se guarda en el dibujo y se lee al abrirlo</li>
             <li><strong>Coordenadas geográficas</strong> — lee la latitud y longitud de cualquier punto, o tecléalas en decimales o en grados-minutos-segundos y marca el punto</li>
             <li><strong>Cotas sin levantamiento</strong> — una malla de puntos con la cota de un modelo de elevación global, lista para triangular y sacar curvas, y el perfil de un eje sin haber ido al campo</li>
             <li><strong>Imagen satelital</strong> — la foto aérea bajo el plano, remuestreada a tus coordenadas para que caiga donde debe, guardada junto al dibujo y con su atribución escrita en el plano</li>
@@ -353,8 +400,62 @@
         </div>
         <figure class="feat-img">
           <img class="zoomable" src="images/screenshots/terreno.jpeg"
-               alt="La imagen satelital de Esri bajo un levantamiento topográfico en IngeCAD, con el lindero y los puntos con cota dibujados encima y la atribución de la fuente escrita en el plano" width="1600" height="1005" loading="lazy">
+               alt="La imagen satelital bajo un levantamiento topográfico en IngeCAD, con el lindero y los puntos con cota dibujados encima y la atribución de la fuente escrita en el plano" width="1600" height="1005" loading="lazy">
         </figure>
+      </div>
+    </section>
+
+    <!-- ── Y además: IA, grupos de capas, complementos ── -->
+    <section class="feat feat-plain more reveal">
+      <div class="container">
+        <h2 class="more-title">Y además</h2>
+        <div class="more-grid">
+          <article class="more-card">
+            <div class="more-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M12 8.2l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/></svg>
+            </div>
+            <div class="more-body">
+              <h3>Un asistente de IA, apagado de fábrica</h3>
+              <p>Si lo enciendes, una pestaña de la barra lateral dibuja, consulta y edita con <strong>los mismos comandos que tú escribes</strong>: cada paso queda en el historial como <code>AI: …</code> y una sola <code>U</code> deshace todo lo que hizo.</p>
+              <ul class="feat-list">
+                <li><strong>El modelo que elijas</strong> — proveedores en la nube con tu propia clave, o uno local en tu máquina</li>
+                <li><strong>Pregunta antes</strong> de borrar muchos objetos, sobrescribir un archivo o abrir otro</li>
+                <li><strong>Puente MCP</strong> — <code>ingecad --mcp</code> deja que un asistente de escritorio o un editor de código maneje el dibujo abierto, por un canal local con su propia contraseña</li>
+                <li><strong>Las claves en el llavero del sistema</strong>, nunca en los ajustes ni en el dibujo; con los dos interruptores apagados no se carga nada</li>
+              </ul>
+            </div>
+          </article>
+          <article class="more-card">
+            <div class="more-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>
+            </div>
+            <div class="more-body">
+              <h3>Grupos de capas, como en el plano del colega</h3>
+              <p>Los <strong>grupos de capas y filtros por propiedades</strong> que trae un dibujo se ven como un árbol en la pestaña Capas, sobre la tabla de siempre.</p>
+              <ul class="feat-list">
+                <li><strong>Todo el grupo a la vez</strong> — con el botón derecho lo apagas o enciendes, lo congelas o lo bloqueas</li>
+                <li><strong>Crea y ordena</strong> — grupo nuevo, arrastra capas a un grupo, renombra o quita, y cada cambio se deshace</li>
+                <li><strong>Guardar como DWG conserva los grupos</strong> y sus capas</li>
+                <li><strong>La tabla clásica</strong> — estado, encendida, congelada, bloqueada, color, tipo y grosor de línea, impresión y descripción, con búsqueda en vivo</li>
+              </ul>
+            </div>
+          </article>
+          <article class="more-card">
+            <div class="more-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0V7z"/><path d="M12 17v5"/></svg>
+            </div>
+            <div class="more-body">
+              <h3>Crece por complementos y scripts</h3>
+              <p>El núcleo es un CAD 2D completo; cada disciplina llega como un <strong>complemento</strong> que se enciende y se apaga en <em>Herramientas ▸ Complementos</em>, y al apagarlo no deja rastro.</p>
+              <ul class="feat-list">
+                <li><strong>Topografía y Terreno</strong> vienen incluidos, con su menú y su barra propios</li>
+                <li><strong>Scripts en Python</strong> — <code>APPLOAD</code> corre un archivo sobre los comandos de IngeCAD como un solo paso de deshacer</li>
+                <li><strong>Guiones <code>.scr</code></strong> con <code>SCRIPT</code>, para repetir una secuencia de comandos</li>
+                <li><strong>Escribe el tuyo</strong> — el contrato de un complemento está documentado en el repositorio</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -384,7 +485,7 @@
           </a>
           <span class="fam-tag">Presupuestos de obra</span>
           <h3>IngePresupuestos</h3>
-          <p>Presupuestos con análisis de costos unitarios, cronograma Gantt con ida y vuelta a MS Project, fórmula polinómica con índices INEI y trece reportes.</p>
+          <p>Presupuestos con análisis de costos unitarios, cronograma Gantt, fórmula polinómica con índices INEI y trece reportes.</p>
           <p class="fam-links">
             <a href="https://ingepresupuestos.com" target="_blank" rel="noopener">ingepresupuestos.com</a>
             <a href="https://github.com/ingelibre/ingepresupuestos" target="_blank" rel="noopener">Código en GitHub</a>
@@ -399,47 +500,96 @@
   <section class="impact">
     <h2>Libre y de código abierto.<br>Para siempre.</h2>
     <p>IngeCAD es software libre bajo GPL-3.0. Sin cuentas, sin nube, sin suscripciones, sin telemetría: tus planos viven en tu PC, en el formato abierto que ya usas. Hecho en el Perú para el ingeniero de toda Latinoamérica.</p>
+    <aside class="impact-card">
+      <p class="impact-card-q">Ayuda a que siga libre</p>
+      <p class="impact-card-sub">Cada aporte, por pequeño que sea, sostiene su desarrollo.</p>
+      <a class="btn btn-lg impact-card-btn" href="/apoyar">Apoyar el proyecto</a>
+      <ul class="pay-chips" aria-label="Medios de pago"><li>Yape</li><li>Plin</li><li>Liberapay</li><li>PayPal</li></ul>
+      <p class="impact-card-alt">¿Sin presupuesto? También ayuda contarle a un colega o dejar una estrella en <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>.</p>
+    </aside>
   </section>
 
   <!-- ============ DESCARGAR ============ -->
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.6.9</span> — <span id="dl-date">octubre 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.6.9</span> — <span id="dl-date">octubre de 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
           <div class="dl-group-cards">
-            <a class="dl-card dl-card-compact" id="dl-flatpak" href="https://downloads.ingecad.org/flatpak/ingecad.flatpakref">
+            <a class="dl-card dl-card-compact dl-card-main" id="dl-flatpak" href="https://downloads.ingecad.org/flatpak/ingecad.flatpakref">
               <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1 2 4.5v7L8 15l6-3.5v-7L8 1zm0 1.7 4.5 2.6L8 7.9 3.5 5.3 8 2.7zM3 6.6l4.5 2.6v4.4L3 11V6.6zm10 0V11l-4.5 2.6V9.2L13 6.6z"/></svg>
               <strong>Flatpak</strong>
               <span>un clic · se actualiza solo</span>
             </a>
             <a class="dl-card dl-card-compact" id="dl-appimage" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
-              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0 1 3.5v9L8 16l7-3.5v-9L8 0zm0 1.7 5 2.5-5 2.5-5-2.5 5-2.5zM2.5 5.6l4.75 2.4v5.9L2.5 11.5V5.6zm11 0v5.9l-4.75 2.4V8L13.5 5.6z"/></svg>
               <strong>AppImage</strong>
-              <span>no instala nada · 112 MB</span>
+              <span>no instala nada · 123 MB</span>
             </a>
             <a class="dl-card dl-card-compact" id="dl-tarball" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
               <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3a1 1 0 0 1 1-1h4l1.5 1.5H13a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm6 3v4.29L6.85 9.15l-.7.7L8.5 12.2l2.35-2.35-.7-.7L9 10.29V6H8z"/></svg>
               <strong>tar.gz</strong>
-              <span>sin FUSE · 123 MB</span>
+              <span>sin FUSE · 135 MB</span>
+            </a>
+            <a class="dl-card dl-card-compact" id="dl-snap" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 4.5 8 1l6 3.5v7L8 15l-6-3.5v-7zm1.5.9v5.2L8 13.2l4.5-2.6V5.4L8 2.8 3.5 5.4zM6 6h4v4H6V6z"/></svg>
+              <strong>Snap</strong>
+              <span>archivo .snap · 161 MB</span>
             </a>
           </div>
-          <p class="dl-group-alt"><strong>Flatpak</strong> (recomendado): el enlace se abre en el centro de software de tu distro — Instalar, y listo. Las actualizaciones llegan solas con las del sistema. Si tu distro no trae Flatpak (Ubuntu): <code>sudo apt install flatpak gnome-software-plugin-flatpak</code> una única vez.</p>
-          <p class="dl-group-alt"><strong>AppImage</strong>: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos):</p>
-          <div class="dl-code" id="dl-code-appimage">
-            <code>chmod +x IngeCAD-0.6.9-x86_64.AppImage
+          <div class="dl-howto">
+            <div class="dl-tabs" role="tablist" aria-label="Cómo instalar en Linux">
+              <span class="dl-tabs-label">Cómo instalar ▾</span>
+              <button type="button" role="tab" class="dl-tab" aria-selected="false" data-tab="flatpak">Flatpak <em>recomendado</em></button>
+              <button type="button" role="tab" class="dl-tab" aria-selected="false" data-tab="appimage">AppImage</button>
+              <button type="button" role="tab" class="dl-tab" aria-selected="false" data-tab="tarball">tar.gz</button>
+              <button type="button" role="tab" class="dl-tab" aria-selected="false" data-tab="snap">Snap</button>
+            </div>
+
+            <div class="dl-panel" role="tabpanel" data-panel="flatpak">
+              <p>Un clic en la tarjeta y el centro de software de tu distro lo instala; las actualizaciones llegan solas con las del sistema. Si tu distro no trae Flatpak (Ubuntu), una única vez: <code>sudo apt install flatpak gnome-software-plugin-flatpak</code>. O desde la terminal:</p>
+              <div class="dl-code" id="dl-code-flatpak">
+                <code>flatpak install --user https://downloads.ingecad.org/flatpak/ingecad.flatpakref
+flatpak run org.ingecad.IngeCAD</code>
+                <button class="dl-code-copy" type="button" data-copy="flatpak install --user https://downloads.ingecad.org/flatpak/ingecad.flatpakref && flatpak run org.ingecad.IngeCAD">Copiar</button>
+              </div>
+              <p class="dl-panel-small">Queda en tu menú de aplicaciones, con los <code>.dwg</code> y <code>.dxf</code> asociados.</p>
+            </div>
+
+            <div class="dl-panel" role="tabpanel" data-panel="appimage">
+              <p>No instala nada: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos).</p>
+              <div class="dl-code" id="dl-code-appimage">
+                <code>chmod +x IngeCAD-0.6.9-x86_64.AppImage
 ./IngeCAD-0.6.9-x86_64.AppImage</code>
-            <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.6.9-x86_64.AppImage && ./IngeCAD-0.6.9-x86_64.AppImage">Copiar</button>
-          </div>
-          <p class="dl-group-alt"><strong>tar.gz</strong>: si tu distro no trae FUSE (lo único que un AppImage necesita), descomprime y ejecuta — sirve igual para instalarlo en <code>/opt</code>:</p>
-          <div class="dl-code" id="dl-code-tarball">
-            <code>tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz
+                <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.6.9-x86_64.AppImage && ./IngeCAD-0.6.9-x86_64.AppImage">Copiar</button>
+              </div>
+              <p class="dl-panel-small">Necesita FUSE, que casi todas las distros traen. Si la tuya no, usa el tar.gz.</p>
+            </div>
+
+            <div class="dl-panel" role="tabpanel" data-panel="tarball">
+              <p>Para distros sin FUSE, o para instalarlo en <code>/opt</code>: descomprime y ejecuta.</p>
+              <div class="dl-code" id="dl-code-tarball">
+                <code>tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz
 IngeCAD-0.6.9/ingecad</code>
-            <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz && IngeCAD-0.6.9/ingecad">Copiar</button>
+                <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz && IngeCAD-0.6.9/ingecad">Copiar</button>
+              </div>
+              <p class="dl-panel-small">Trae lo mismo que el AppImage: Python, Qt y los conversores de DWG viajan dentro.</p>
+            </div>
+
+            <div class="dl-panel" role="tabpanel" data-panel="snap">
+              <p>Todavía no está en la tienda de Snap: descarga el archivo e instálalo desde la carpeta donde quedó. <code>--dangerous</code> sólo dice que el paquete no viene firmado por la tienda.</p>
+              <div class="dl-code" id="dl-code-snap">
+                <code>sudo snap install --dangerous ingecad_0.6.9_amd64.snap
+ingecad</code>
+                <button class="dl-code-copy" type="button" data-copy="sudo snap install --dangerous ingecad_0.6.9_amd64.snap && ingecad">Copiar</button>
+              </div>
+              <p class="dl-panel-small">Así no se actualiza solo: para la versión siguiente, repite con el archivo nuevo.</p>
+            </div>
+
+            <p class="dl-howto-foot">Corren en Ubuntu 22.04 y posteriores. Si algo falla, ejecútalo con la opción <code>--check</code> y te dice qué falta (por ejemplo <code>flatpak run org.ingecad.IngeCAD --check</code>).</p>
           </div>
-          <p class="dl-group-alt">Los dos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Corren en Ubuntu 22.04 y posteriores. Si algo falla, <code>--check</code> te dice qué falta.</p>
         </div>
 
         <div class="dl-divider"></div>
@@ -450,12 +600,12 @@ IngeCAD-0.6.9/ingecad</code>
             <a class="dl-card dl-card-compact" id="dl-win-setup" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
               <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 2.3 6.5 1.4v6.1H0V2.3zm7.3-1L16 0v7.5H7.3V1.3zM0 8.4h6.5v6.2L0 13.7V8.4zm7.3 0H16V16l-8.7-1.2V8.4z"/></svg>
               <strong>Instalador</strong>
-              <span>menú Inicio · abre .dwg</span>
+              <span>menú Inicio · abre .dwg · 61 MB</span>
             </a>
             <a class="dl-card dl-card-compact" id="dl-win-zip" href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">
-              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3a1 1 0 0 1 1-1h4l1.5 1.5H13a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm6 3v4.29L6.85 9.15l-.7.7L8.5 12.2l2.35-2.35-.7-.7L9 10.29V6H8z"/></svg>
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 0h5l4 4v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zm5 1v3h3L9 1z"/></svg>
               <strong>Zip portable</strong>
-              <span>sin instalar</span>
+              <span>sin instalar · 93 MB</span>
             </a>
           </div>
           <p class="dl-group-alt">El instalador todavía no está firmado: la primera vez Windows SmartScreen avisa que protegió tu PC. Pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>. El zip se descomprime donde quieras y se abre <code>ingecad\ingecad.exe</code>.</p>
@@ -465,13 +615,6 @@ IngeCAD-0.6.9/ingecad</code>
 
         <div class="dl-group">
           <span class="dl-group-label">Desde el código fuente</span>
-          <div class="dl-group-cards">
-            <a class="dl-card dl-card-compact" href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">
-              <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 0h5l4 4v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zm5 1v3h3L9 1z"/></svg>
-              <strong>Ver en GitHub</strong>
-              <span>código + releases</span>
-            </a>
-          </div>
           <div class="dl-code">
             <code>git clone https://github.com/ingelibre/ingecad && cd ingecad
 python3 -m venv venv && venv/bin/pip install -r requirements.txt
@@ -485,6 +628,7 @@ venv/bin/python main.py</code>
   </section>
 
   <!-- ============ FAQ ============ -->
+  <!-- El JSON-LD FAQPage del <head> espeja estas preguntas y respuestas. -->
   <section id="faq" class="section">
     <div class="container container-narrow">
       <div class="section-head">
@@ -498,11 +642,11 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Abre el DWG que me manda un colega?</summary>
-          <p>Sí, con doble clic y sin pasos intermedios: IngeCAD trae <strong>GNU LibreDWG</strong> incluido y convierte el DWG por dentro, sin ver nunca el DXF. Lee DWG hasta la <strong>versión 2018</strong> y guarda <strong>DWG r2000</strong>, que abre cualquier CAD desde el año 2000.</p>
+          <p>Sí, con doble clic y sin pasos intermedios: IngeCAD trae <strong>GNU LibreDWG</strong> incluido y convierte el DWG por dentro, sin que veas nunca el DXF. Lee DWG hasta la <strong>versión 2018</strong> y guarda <strong>DWG r2000</strong>, que abre cualquier CAD desde el año 2000.</p>
         </details>
         <details class="faq-item">
           <summary>¿Qué hace distinto a IngeCAD?</summary>
-          <p>IngeCAD es libre, corre <strong>nativo en Linux</strong> y tiene <strong>la interfaz clásica de los CAD</strong>: menús, barras y la línea de comandos abajo, con los aliases de comandos que ya conoces: escribes <code>L</code> y dibujas una línea.</p>
+          <p>IngeCAD es libre, corre <strong>nativo en Linux</strong> y tiene <strong>la interfaz clásica de los CAD</strong>: menús, barras y la línea de comandos abajo. Hace lo que usas todos los días (líneas, polilíneas, círculos, bloques, capas, sombreados, cotas, recortar, equidistancia, imprimir a escala) y acepta los aliases de comandos que ya conoces: escribes <code>L</code> y dibujas una línea.</p>
         </details>
         <details class="faq-item">
           <summary>¿Tengo que aprender comandos nuevos?</summary>
@@ -514,28 +658,44 @@ venv/bin/python main.py</code>
         </details>
         <details class="faq-item">
           <summary>¿Funciona sin internet?</summary>
-          <p>Sí, todo. IngeCAD no consulta ningún servidor: <strong>no tiene cuentas, ni nube, ni telemetría</strong>. Tus planos viven en tu PC.</p>
+          <p>Sí. Todo el CAD funciona <strong>sin conexión</strong>: no tiene cuentas, ni nube, ni telemetría, y tus planos viven en tu PC. Solo se conecta cuando tú se lo pides: el complemento Terreno, al traer la imagen satelital o las cotas del modelo de elevación, y el asistente de IA, si lo enciendes con un proveedor en la nube.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cómo lo instalo?</summary>
-          <p>La vía fácil es el <strong>Flatpak</strong>: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el <strong>AppImage</strong> (dale permiso de ejecución y listo: no instala nada en el sistema) y el <strong>tar.gz</strong> si tu distro no trae FUSE — lo descomprimes donde quieras y ejecutas <code>ingecad</code>. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, ejecuta <code>--check</code> y te dice qué le falta.</p>
+          <p>La vía fácil es el <strong>Flatpak</strong>: un clic en el enlace de la sección Descargar, tu centro de software lo instala y las actualizaciones llegan solas. También está el <strong>AppImage</strong> (dale permiso de ejecución y listo: no instala nada en el sistema), el <strong>tar.gz</strong> si tu distro no trae FUSE —lo descomprimes donde quieras y ejecutas <code>ingecad</code>— y el archivo <strong>.snap</strong>. Todos traen lo mismo: Python, Qt y los conversores de DWG viajan dentro. Si algo no funciona, ejecuta <code>--check</code> y te dice qué le falta.</p>
         </details>
         <details class="faq-item">
           <summary>¿Hay versión para Windows?</summary>
-          <p><strong>Sí, desde la versión 0.6.6.</strong> Un instalador (menú Inicio, «Abrir con» para <code>.dwg</code> y <code>.dxf</code>, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: <strong>Más información</strong> ▸ <strong>Ejecutar de todas formas</strong>.</p>
+          <p>Sí, desde la versión 0.6.6: un instalador (menú Inicio, «Abrir con» para <code>.dwg</code> y <code>.dxf</code>, desinstalador) y un zip portable que corre sin instalar, con el mismo LibreDWG que en Linux. El instalador todavía no está firmado, así que la primera vez Windows SmartScreen avisa que protegió tu PC: <strong>Más información</strong> ▸ <strong>Ejecutar de todas formas</strong>.</p>
         </details>
         <details class="faq-item">
           <summary>¿Puedo acotar e imprimir a escala desde una presentación?</summary>
-          <p>Sí, con el flujo de siempre: dibujas a tamaño real en el modelo, creas una presentación, insertas una ventana gráfica con <code>MVIEW</code> y le pones la escala exacta con <code>Z</code> → <code>1/50xp</code> (o eligiéndola de la lista). <strong>La hoja se imprime 1:1 a PDF</strong>, así que la escala del plano es la de la ventana y se verifica con regla. Están la familia completa de cotas —lineal, alineada, angular, longitud de arco, coordenada, radio, diámetro, marca de centro, línea base y continuar— y el administrador de estilos de cota.</p>
+          <p>Sí, con el flujo de siempre: dibujas a tamaño real en el modelo, creas una presentación, insertas una ventana gráfica con <code>MVIEW</code> y le pones la escala exacta con <code>Z</code> y <code>1/50xp</code> (o eligiéndola de la lista). <strong>La hoja se imprime 1:1 a PDF</strong>, así que la escala del plano es la de la ventana y se verifica con regla. Están la familia completa de cotas —lineal, alineada, angular, longitud de arco, coordenada, radio, diámetro, marca de centro, línea base y continuar— y el administrador de estilos de cota.</p>
         </details>
         <details class="faq-item">
           <summary>¿Y la topografía: puntos, cuadro de coordenadas, perfiles?</summary>
-          <p>Ya está, desde la <strong>v0.6</strong>, como complemento <strong>Topografía</strong>: importa el CSV del topógrafo con cotas, arma el cuadro de datos técnicos (Este/Norte, lados, rumbos, área y perímetro), triangula, traza curvas de nivel, perfiles, secciones y movimiento de tierras, y redacta la memoria descriptiva. Y el complemento <strong>Terreno</strong> georreferencia el plano, trae cotas de un DEM global y la imagen satelital, y va y vuelve de Google Earth por KML/KMZ. Todo lo que dibujan es DXF plano que abre cualquier CAD.</p>
+          <p>Ya está, desde la <strong>v0.6</strong>, como complemento <strong>Topografía</strong>: importa el CSV del topógrafo con cotas, arma el cuadro de datos técnicos (Este/Norte, lados, rumbos, área y perímetro), triangula, traza curvas de nivel, perfiles, secciones y movimiento de tierras, y redacta la memoria descriptiva. Y el complemento <strong>Terreno</strong> georreferencia el plano, trae cotas de un modelo de elevación global y la imagen satelital, y va y vuelve de Google Earth por KML/KMZ. Todo lo que dibujan es DXF plano que abre cualquier CAD. El paso a paso está en el <a href="/manual-topografia">manual de Topografía</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Tiene inteligencia artificial?</summary>
+          <p>Sí, y viene <strong>apagada</strong>. Si la enciendes en Herramientas ▸ Opciones, una pestaña de la barra lateral habla con el modelo que elijas (en la nube con tu propia clave, o uno local) y trabaja con los mismos comandos que tú escribes: cada paso queda en el historial y una sola <code>U</code> deshace todo su turno. Con <code>ingecad --mcp</code>, un asistente de escritorio o un editor de código puede manejar el dibujo abierto. Sin IA, IngeCAD funciona igual.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cómo reporto un problema o contribuyo?</summary>
-          <p>El proyecto vive en <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>: abre un issue con tu plano de ejemplo, propón mejoras o envía código. <strong>Si un DWG no abre bien, ese archivo es lo más valioso que puedes aportar</strong> — varios arreglos de esta versión salieron justamente de planos reales que fallaban, y trece de ellos ya son parches enviados a GNU LibreDWG.</p>
+          <p>El proyecto vive en <a href="https://github.com/ingelibre/ingecad" target="_blank" rel="noopener">GitHub</a>: abre un issue con tu plano de ejemplo, propón mejoras o envía código. <strong>Si un DWG no abre bien, ese archivo es lo más valioso que puedes aportar</strong>: muchos arreglos salieron justamente de planos reales que fallaban, y decenas ya son parches aceptados en GNU LibreDWG.</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRANJA FINAL ============ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Empieza a dibujar hoy</h2>
+      <p>En Linux y Windows. Gratis, completo y sin cuentas.</p>
+      <div class="final-cta-btns">
+        <a href="#descargar" class="btn btn-lg final-cta-dl">Descargar IngeCAD</a>
+        <a href="/manual-topografia" class="btn btn-lg final-cta-man">Manual de Topografía</a>
       </div>
     </div>
   </section>
@@ -549,8 +709,9 @@ venv/bin/python main.py</code>
           <strong>IngeCAD</strong>
         </div>
         <p>CAD 2D libre para Linux, con DWG de fábrica.</p>
+        <a class="btn btn-heart footer-support" href="/apoyar">Apoyar el proyecto</a>
         <p class="footer-copy">© 2026 Marco Sumari Tellez · Software libre GPL-3.0</p>
-        <p class="footer-legal" style="font-size:12px;opacity:.7;margin-top:8px">IngeCAD es un proyecto independiente, sin relación con ningún fabricante de software CAD.</p>
+        <p class="footer-legal">IngeCAD es un proyecto independiente, sin relación con ningún fabricante de software CAD.</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
@@ -559,7 +720,6 @@ venv/bin/python main.py</code>
           <li><a href="#descargar">Descargar</a></li>
           <li><a href="https://github.com/ingelibre/ingecad/releases" target="_blank" rel="noopener">Releases</a></li>
           <li><a href="/manual-topografia">Manual de Topografía</a></li>
-          <li><a href="/apoyar">Apoyar el proyecto</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -587,7 +747,7 @@ venv/bin/python main.py</code>
   <!-- Lightbox para ampliar capturas -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
-    <img src="" alt="">
+    <img alt="">
   </div>
 
   <script src="script.js"></script>
