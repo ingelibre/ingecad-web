@@ -997,3 +997,11 @@ code {
 .ext-state p { font-size: 15px; line-height: 1.55; color: var(--text); max-width: 720px; }
 .ext-shot-logo img { width: 64px; height: 64px; opacity: 0.9; }
 .ext-box code { overflow-wrap: anywhere; }
+
+/* ============ Complementos en la portada ============ */
+.home-ext-card { color: inherit; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+.home-ext-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-img, 0 10px 30px rgba(26,36,52,.15)); }
+.home-ext-card h3 { font-size: 17px; color: var(--head); }
+.home-ext-summary { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.home-ext-cta { margin-top: 28px; display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.home-ext-pub { font-weight: 600; }
