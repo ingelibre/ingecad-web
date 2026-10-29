@@ -986,7 +986,6 @@ code {
    vacío o sin red del catálogo de la comunidad. */
 .ext-lead { font-size: 15px; color: var(--text); margin: -6px 0 18px; }
 .ext-grid-bundled { margin-bottom: 56px; }
-.ext-grid-bundled .ext-shot { aspect-ratio: 16 / 6; }
 .ext-badge-in { color: var(--white); background: var(--accent); border-color: var(--accent); }
 .ext-tools[hidden], .ext-tags[hidden], .ext-count[hidden], .ext-state[hidden] { display: none; }
 .ext-state {

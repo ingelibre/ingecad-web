@@ -1,5 +1,5 @@
 // Home page: up to four community plugins, read live from the catalog that
-// /complementos shows, each card linking to that page. The two bundled
+// /extensiones shows, each card linking to that page. The two bundled
 // plugins are static HTML; without JavaScript or a catalog only they show.
 (function () {
   'use strict';
@@ -20,7 +20,7 @@
   }
   function card(x) {
     const a = el('a', 'ext-card home-ext-card');
-    a.href = '/complementos';
+    a.href = '/extensiones';
     const shot = el('div', 'ext-shot');
     if (typeof x.screenshot === 'string' && /^[a-z0-9_.-]+$/.test(x.screenshot)) {
       const img = document.createElement('img');

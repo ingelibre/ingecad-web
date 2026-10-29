@@ -1,10 +1,10 @@
-// Página de complementos: dibuja las tarjetas de la comunidad desde el
+// Página de extensiones: dibuja las tarjetas de la comunidad desde el
 // catalog.json del repositorio del catálogo
 // (github.com/ingelibre/ingecad-extensions). Aprobar una ficha allí
 // actualiza esta página sin publicar nada: el JSON se lee en cada visita.
 // Todo lo que viene del catálogo se escribe con textContent — una ficha
 // nunca puede inyectar HTML. Sin catálogo (sin red, o vacío) la página
-// sigue sirviendo: los complementos incluidos están en el HTML.
+// sigue sirviendo: las extensiones incluidas están en el HTML.
 
 (function () {
   'use strict';
@@ -19,8 +19,8 @@
   const ui = {
     download: 'Descargar', code: 'Ver código', reviewed: 'Revisado',
     community: 'Comunidad', by: 'por', tested: 'Probado con IngeCAD',
-    count: (n, t) => n === t ? `${t} complementos` : `${n} de ${t} complementos`,
-    one: '1 complemento', none: 'Ningún complemento coincide con la búsqueda.',
+    count: (n, t) => n === t ? `${t} extensiones` : `${n} de ${t} extensiones`,
+    one: '1 extensión', none: 'Ninguna extensión coincide con la búsqueda.',
     all: 'Todos', updated: 'actualizado',
     more: (n) => `Ver más (${n})`,
     tags: {
