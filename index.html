@@ -47,7 +47,7 @@
     "applicationCategory": "DesignApplication",
     "description": "CAD 2D libre con la interfaz clásica de menús, barras y línea de comandos, orientado al ingeniero civil: abre y guarda DWG y DXF de forma fiel (GNU LibreDWG incluido), línea de comandos con los aliases de comandos clásicos, referencias a objetos con sus marcadores, capas y grupos de capas, bloques, sombreados, la familia completa de cotas con su administrador de estilos, presentaciones con ventanas gráficas a escala, y salida a PDF y PNG a escala exacta. Complementos de topografía (puntos, cuadro de datos técnicos, curvas de nivel, perfiles, movimiento de tierras, memoria descriptiva) y de terreno (georreferenciación UTM, cotas de un modelo de elevación global, imagen satelital y KML de Google Earth), y un asistente de IA opcional, apagado de fábrica. Nativo en Linux y Wayland, también en Windows, sin ribbon. Código abierto bajo GPL-3.0.",
     "url": "https://ingecad.org/",
-    "softwareVersion": "0.6.9",
+    "softwareVersion": "0.7.0",
     "downloadUrl": "https://github.com/ingelibre/ingecad/releases/latest",
     "screenshot": "https://ingecad.org/images/screenshots/principal.jpeg",
     "image": "https://ingecad.org/images/logo.png",
@@ -176,7 +176,7 @@
 
   <!-- ============ AVISO DE NUEVA VERSIÓN ============ -->
   <div class="announce" id="announce">
-    <p><strong>Nuevo:</strong> IngeCAD <span id="announce-version">v0.6.9</span> ya disponible — <a href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">ver novedades →</a></p>
+    <p><strong>Nuevo:</strong> IngeCAD <span id="announce-version">v0.7.0</span> ya disponible — <a href="https://github.com/ingelibre/ingecad/releases/latest" target="_blank" rel="noopener">ver novedades →</a></p>
     <button type="button" class="announce-close" aria-label="Cerrar aviso">×</button>
   </div>
 
@@ -208,7 +208,7 @@
       <span class="hero-badge">Software libre · GPL-3.0</span>
       <h1>El CAD 2D libre con el espíritu del <span class="grad-text">CAD clásico</span>.</h1>
       <p class="hero-lead">Abre DWG y DXF sin conversores y dibuja con los comandos y aliases que ya conoces.</p>
-      <p class="hero-name"><strong>Nativo en Linux</strong>, también en Windows · Última versión: <span id="latest-version">v0.6.9</span></p>
+      <p class="hero-name"><strong>Nativo en Linux</strong>, también en Windows · Última versión: <span id="latest-version">v0.7.0</span></p>
       <div class="hero-ctas">
         <a href="#descargar" class="btn btn-primary btn-lg" id="hero-dl">Descargar IngeCAD</a>
         <a href="https://github.com/ingelibre/ingecad" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Ver el código</a>
@@ -447,9 +447,10 @@
             </div>
             <div class="more-body">
               <h3>Crece por complementos y scripts</h3>
-              <p>El núcleo es un CAD 2D completo; cada disciplina llega como un <strong>complemento</strong> que se enciende y se apaga en <em>Herramientas ▸ Complementos</em>, y al apagarlo no deja rastro.</p>
+              <p>El núcleo es un CAD 2D completo; cada disciplina llega como un <strong>complemento</strong> que se instala, se enciende y se apaga en <em>Herramientas ▸ Administrar extensiones</em>, y al quitarlo no deja rastro.</p>
               <ul class="feat-list">
-                <li><strong>Topografía y Terreno</strong> vienen incluidos, con su menú y su barra propios</li>
+                <li><strong>Topografía, Terreno y Carreteras</strong> vienen incluidos, con su menú y su barra propios</li>
+                <li><strong>Un catálogo de extensiones</strong> que se instalan con un clic, cada descarga verificada</li>
                 <li><strong>Scripts en Python</strong> — <code>APPLOAD</code> corre un archivo sobre los comandos de IngeCAD como un solo paso de deshacer</li>
                 <li><strong>Guiones <code>.scr</code></strong> con <code>SCRIPT</code>, para repetir una secuencia de comandos</li>
                 <li><strong>Escribe el tuyo</strong> — el contrato de un complemento está documentado en el repositorio</li>
@@ -463,7 +464,7 @@
   </div>
 
   <!-- ============ EXTENSIONES ============ -->
-  <!-- The two bundled plugins are static; /home-ext.js adds up to four
+  <!-- The three bundled plugins are static; /home-ext.js adds up to four
        community ones, read live from the catalog /extensiones shows. -->
   <section id="extensiones" class="section bg-light home-ext reveal">
     <div class="container">
@@ -484,6 +485,13 @@
           <div class="ext-body">
             <div class="ext-top"><h3>Terreno</h3><span class="ext-badge ext-badge-in">Incluida</span></div>
             <p class="ext-summary home-ext-summary">Georreferencia el dibujo (UTM, WGS84, PSAD56 o cualquier código EPSG), trae cotas de un modelo de elevación global, pone la imagen satelital bajo el plano e importa y exporta KML/KMZ.</p>
+          </div>
+        </a>
+        <a class="ext-card home-ext-card" href="/extensiones">
+          <div class="ext-shot"><img src="images/screenshots/carreteras.jpg" alt="" loading="lazy" width="600" height="375"></div>
+          <div class="ext-body">
+            <div class="ext-top"><h3>Carreteras</h3><span class="ext-badge ext-badge-in">Incluida</span></div>
+            <p class="ext-summary home-ext-summary">Eje de carretera desde una polilínea, estacado con progresivas, curvas horizontales simples en cada PI con su PC y PT, y los cuadros del eje y de elementos de curva (DG-2018).</p>
           </div>
         </a>
       </div>
@@ -546,7 +554,7 @@
   <section id="descargar" class="download-section">
     <div class="container">
       <h2>Descarga IngeCAD</h2>
-      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.6.9</span> — <span id="dl-date">octubre de 2026</span>.</p>
+      <p class="download-sub">Gratis y completo. Versión <span id="dl-version">0.7.0</span> — <span id="dl-date">octubre de 2026</span>.</p>
       <div class="dl-row">
         <div class="dl-group">
           <span class="dl-group-label">Linux · x86_64</span>
@@ -594,9 +602,9 @@ flatpak run org.ingecad.IngeCAD</code>
             <div class="dl-panel" role="tabpanel" data-panel="appimage">
               <p>No instala nada: dale permiso de ejecución y ábrelo (o doble clic desde tu gestor de archivos).</p>
               <div class="dl-code" id="dl-code-appimage">
-                <code>chmod +x IngeCAD-0.6.9-x86_64.AppImage
-./IngeCAD-0.6.9-x86_64.AppImage</code>
-                <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.6.9-x86_64.AppImage && ./IngeCAD-0.6.9-x86_64.AppImage">Copiar</button>
+                <code>chmod +x IngeCAD-0.7.0-x86_64.AppImage
+./IngeCAD-0.7.0-x86_64.AppImage</code>
+                <button class="dl-code-copy" type="button" data-copy="chmod +x IngeCAD-0.7.0-x86_64.AppImage && ./IngeCAD-0.7.0-x86_64.AppImage">Copiar</button>
               </div>
               <p class="dl-panel-small">Necesita FUSE, que casi todas las distros traen. Si la tuya no, usa el tar.gz.</p>
             </div>
@@ -604,9 +612,9 @@ flatpak run org.ingecad.IngeCAD</code>
             <div class="dl-panel" role="tabpanel" data-panel="tarball">
               <p>Para distros sin FUSE, o para instalarlo en <code>/opt</code>: descomprime y ejecuta.</p>
               <div class="dl-code" id="dl-code-tarball">
-                <code>tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz
-IngeCAD-0.6.9/ingecad</code>
-                <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.6.9-linux-x86_64.tar.gz && IngeCAD-0.6.9/ingecad">Copiar</button>
+                <code>tar -xzf IngeCAD-0.7.0-linux-x86_64.tar.gz
+IngeCAD-0.7.0/ingecad</code>
+                <button class="dl-code-copy" type="button" data-copy="tar -xzf IngeCAD-0.7.0-linux-x86_64.tar.gz && IngeCAD-0.7.0/ingecad">Copiar</button>
               </div>
               <p class="dl-panel-small">Trae lo mismo que el AppImage: Python, Qt y los conversores de DWG viajan dentro.</p>
             </div>
@@ -614,9 +622,9 @@ IngeCAD-0.6.9/ingecad</code>
             <div class="dl-panel" role="tabpanel" data-panel="snap">
               <p>Todavía no está en la tienda de Snap: descarga el archivo e instálalo desde la carpeta donde quedó. <code>--dangerous</code> sólo dice que el paquete no viene firmado por la tienda.</p>
               <div class="dl-code" id="dl-code-snap">
-                <code>sudo snap install --dangerous ingecad_0.6.9_amd64.snap
+                <code>sudo snap install --dangerous ingecad_0.7.0_amd64.snap
 ingecad</code>
-                <button class="dl-code-copy" type="button" data-copy="sudo snap install --dangerous ingecad_0.6.9_amd64.snap && ingecad">Copiar</button>
+                <button class="dl-code-copy" type="button" data-copy="sudo snap install --dangerous ingecad_0.7.0_amd64.snap && ingecad">Copiar</button>
               </div>
               <p class="dl-panel-small">Así no se actualiza solo: para la versión siguiente, repite con el archivo nuevo.</p>
             </div>

@@ -1,5 +1,5 @@
 // Home page: up to four community plugins, read live from the catalog that
-// /extensiones shows, each card linking to that page. The two bundled
+// /extensiones shows, each card linking to that page. The three bundled
 // plugins are static HTML; without JavaScript or a catalog only they show.
 (function () {
   'use strict';
